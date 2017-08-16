@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>退货单创建成功</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">-->
+		    <!--<a class="mui-icon mui-icon-left-nav mui-pull-left" id='return-home-btn'><span class="font-1rem ">继续购物</span></a>-->
+		    <!--<h1 class="mui-title"></h1>-->
+		<!--</header>-->
+		<div class="mui-content">
+			
+			<div class="mui-card order-success-card">
+				<div class="mui-card-body">
+					<img src="img/firework.jpg" alt="">
+
+					<div class="mui-card-content">
+						<p> <i class="iconfont">&#xe664;</i>销售单创建成功! </p>
+						<p>销售单号: 4352345324523</p>
+						<p>客户: 王大林</p>
+						<span class="order-date">创建日期: 2016-11-28 16:23:22</span>
+						<!--<button class="mui-btn">返回首页</button>-->
+						<button class="mui-btn mui-btn-danger mui-btn-block" id="return-home-btn">继续开单</button>
+					</div>
+				</div>
+			</div>
+		    <p></p>
+		    <p></p>
+		    <p></p>
+		    <p></p>
+		    
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+
+			mui.ready(function () {
+				var reviewOrderBtn=document.querySelector('#review-order');
+				reviewOrderBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'order.html',
+						id:'order'
+					});
+				});
+			});
+			mui.plusReady(function(){
+
+				var btn=document.querySelector('#return-home-btn');
+				btn.addEventListener('tap',function () {
+					console.log('tap');
+					var allView=plus.webview.all();
+					for(var i=0;i<allView.length;i++)
+					{
+						console.log('webview id:',allView[i].id);
+					}
+					var homePage=plus.webview.getLaunchWebview();
+					var productPage=plus.webview.getWebviewById('sale.html');
+					for(var i=0; i<allView.length; i++)
+					{
+						if(allView[i]==homePage || allView[i]==productPage)
+						{
+							homePage.show();
+							productPage.show();
+							plus.webview.show(homePage);
+							plus.webview.show(productPage);
+						}else
+						{
+							plus.webview.hide(allView[i]);
+						}
+					}
+				});
+
+
+				var btnReviewOrder=document.querySelector('#review-order');
+				btnReviewOrder.addEventListener('tap',function () {
+					var allView=plus.webview.all();
+					for(var i=0;i<allView.length;i++)
+					{
+						console.log('webview id:',allView[i].id);
+					}
+					var homePage=plus.webview.getLaunchWebview();
+					var orderPage=plus.webview.getWebviewById('order.html');
+					console.log('orderpage is:',orderPage.show());
+					for(var i=0; i<allView.length; i++)
+					{
+						if(allView[i]==homePage || allView[i]==orderPage)
+						{
+							homePage.show();
+							orderPage.show();
+							plus.webview.show(homePage);
+							plus.webview.show(orderPage);
+
+						}else
+						{
+							plus.webview.hide(allView[i]);
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

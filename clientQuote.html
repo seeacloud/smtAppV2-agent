@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>报价</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+    <div id="app">
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">报价</h1>
+            <!--<span v-on:click="editdown" v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>-->
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+                    <!--<div class="info-item">-->
+                        <!--<div class="info-title">状态</div>-->
+                        <!--<div class="info-content">已报价</div>-->
+                    <!--</div>-->
+                    <!--<div class="info-item">-->
+                        <!--<div class="info-title">来源</div>-->
+                        <!--<div class="info-content"><i class="iconfont">&#xe6a7;</i><span class="source-info">来源 1</span></div>-->
+
+                    <!--</div>-->
+                    <!--<div class="info-item item-sub">-->
+                        <!--<ul class="mui-table-view mui-table-view-radio">-->
+                            <!--<li class="mui-table-view-cell">-->
+                                <!--<a class="mui-navigate-right">来源 1</a>-->
+                            <!--</li>-->
+                            <!--<li class="mui-table-view-cell mui-selected">-->
+                                <!--<a class="mui-navigate-right">来源 2</a>-->
+                            <!--</li>-->
+                            <!--<li class="mui-table-view-cell">-->
+                                <!--<a class="mui-navigate-right">来源 3</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+
+
+                    <div class="info-item">
+                        <div class="info-title">姓名</div>
+                        <div class="info-content">李先生</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-title">报价</div>
+                        <input type="text" placeholder="请输入金额">
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">时间</div>
+                        <input type="text" placeholder="调用日期控件">
+                    </div>
+                    <div class="input-item">
+
+                        <div style="margin-bottom:1rem;">附件信息</div>
+
+                        <div class="icon-group">
+
+                            <div class="vr-icon">
+                                <span class="img-wrap">
+                                    <img src="img/bed.jpg" alt=""/>
+                                </span>
+                                <span class="close-btn">-</span>
+                            </div>
+
+
+                            <div class="add-btn">
+                                +
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">报价清单</div>
+                        <div class="info-content">添加附件</div>
+                    </div>
+                    <div class="info-item">
+                        <textarea rows="5" >请输入备注...
+                        </textarea>
+                    </div>
+
+                    <div class="inner">
+                        <button class="mui-btn full-btn  mui-btn-outlined ">保存</button>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

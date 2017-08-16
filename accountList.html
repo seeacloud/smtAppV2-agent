@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>账户列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css"/>
+
+
+</head>
+<body>
+
+<header class="mui-bar mui-bar-nav blank-header">
+    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+    <h1 class="mui-title">收款账户</h1>
+    <!--<i class="iconfont" id="cart-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe698;</i>-->
+
+</header>
+<div class="mui-content">
+
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <div class="sec sec-bank-account">
+                <div class="sec-inner">
+                    <div class="row-l-m-r">
+                        <div class="left" style="padding-left:23px;">账户名称</div>
+                        <div class="middle">  开户行</div>
+                        <div class="right">账号</div>
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">
+                            <div class="mui-input-row mui-radio">
+                                <label></label>
+                                <input name="radio1" type="radio">
+                            </div>
+                            汉瑞木业有限公司
+                        </div>
+                        <div class="middle">工商银行湖南省长沙市雨花支行 </div>
+                        <div class="right">7777 8888 8888 9999</div>
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">
+                            <div class="mui-input-row mui-radio">
+                                <label></label>
+                                <input name="radio1" type="radio">
+                            </div>
+                            汉瑞木业有限公司
+                        </div>
+                        <div class="middle">工商银行湖南省长沙市雨花支行 </div>
+                        <div class="right">7777 8888 8888 9999</div>
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">
+                            <div class="mui-input-row mui-radio">
+                                <label></label>
+                                <input name="radio1" type="radio">
+                            </div>
+                            汉瑞木业有限公司
+                        </div>
+                        <div class="middle">工商银行湖南省长沙市雨花支行 </div>
+                        <div class="right">7777 8888 8888 9999</div>
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">
+                            <div class="mui-input-row mui-radio">
+                                <label></label>
+                                <input name="radio1" type="radio">
+                            </div>
+                            汉瑞木业有限公司
+                        </div>
+                        <div class="middle">工商银行湖南省长沙市雨花支行 </div>
+                        <div class="right">7777 8888 8888 9999</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    <div class="btn-2-fixed-btm">
+        <div class="btn-cancel mui-action-back">取消</div>
+        <div class="btn-confirm">确认</div>
+    </div>
+
+</div>
+</body>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/echarts.simple.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script>
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+
+    mui.ready(function () {
+
+        mui('.mui-scroll-wrapper').scroll();
+
+    });
+</script>
+
+
+</html>

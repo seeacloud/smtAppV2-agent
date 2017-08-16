@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+<body>
+
+
+<div class="mui-content">
+    <div class="mui-scroll-wrapper" style="top:0;background:#fff;">
+        <div class="mui-scroll">
+            <div class="message-item" id="msg-1">
+                <div class="message-icon message-icon-manufacturer"><i class="iconfont">&#xe647;</i></div>
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>汉瑞木业年终大促,让利百万!</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>正式发布,请各位用户升级更新,升级地址请访问000000000000tewrwqpuqwerupupo</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-2">
+                <div class="message-icon message-icon-platform"><i class="iconfont">&#xe6bd;</i></div>
+
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>山木通App2.0正式发布</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>山木通App2.0正式发布,请各位用户升级更新,升级地址请访问www.shanmt.com或者直接在先有App中进行升级</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-3">
+                <div class="message-icon message-icon-business"><i class="iconfont">&#xe60c;</i></div>
+
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>订单3324321待结算确认</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>新中新木业有限公司近日与“山木通”签约，成为合作伙伴。山木通正在不断为客户创造更大的价值，代理更多的生意</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-4">
+                <div class="message-icon message-icon-manufacturer"><i class="iconfont">&#xe647;</i></div>
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>汉瑞木业年终大促,让利百万!</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>客户的实际需求后开发出来一套成熟的产品。旨在使木业行业能轻松的实现对订单、客户、资金、库存等集中管理，建立合理</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-5">
+                <div class="message-icon message-icon-platform"><i class="iconfont">&#xe6bd;</i></div>
+
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>山木通App2.0正式发布</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>简洁、大方、易操作的系统。达到流程可视化，过程透明化，操作简便化,为用户提高生产效率，降低管理成本，挖掘潜</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-6">
+                <div class="message-icon message-icon-business"><i class="iconfont">&#xe60c;</i></div>
+
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>订单3324321待结算确认</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>管理，建立合理、简洁、大方、易操作的系统。达到流程可视化，过程透明化，操作简便化,为用户提高生产效率，</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-7">
+                <div class="message-icon message-icon-manufacturer"><i class="iconfont">&#xe647;</i></div>
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>汉瑞木业年终大促,让利百万!</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>客户的实际需求后开发出来一套成熟的产品。旨在使木业行业能轻松的实现对订单、客户、资金、库存等集中管理，建立合理</p>
+                </div>
+            </div>
+            <div class="message-item" id="msg-8">
+                <div class="message-icon message-icon-platform"><i class="iconfont">&#xe6bd;</i></div>
+
+                <div class="message-content">
+                    <div class="message-title">
+                        <h5>山木通App2.0正式发布</h5>
+                        <div class="date">2016-12-01</div>
+                    </div>
+                    <p>简洁、大方、易操作的系统。达到流程可视化，过程透明化，操作简便化,为用户提高生产效率，降低管理成本，挖掘潜</p>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+
+
+
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

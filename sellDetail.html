@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>销售单详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+		    <h1 class="mui-title">销售单详情</h1>
+		</header>
+		<div class="mui-content" >
+
+
+			<div class="mui-scroll-wrapper" style="top:44px;">
+				<div class="mui-scroll">
+					<div class="address-card">
+						<div class="post-frame"></div>
+
+						<div class="address-card-inner">
+							<div class="addr-icon"><i class="iconfont">&#xe715;</i></div>
+							<div class="addr-info">
+								<p class="addr-name-phone">收货人: 戴树文 <span class="a-phone">186-8888-9999</span></p>
+								<p class="addr-detail"> 地址: 湖南省长沙市岳麓区高新路高新科技大厦1栋101</p>
+							</div>
+						</div>
+						<div class=" post-frame"></div>
+
+					</div>
+
+
+					<div class="goods-card" >
+						<div class="goods-title">
+							<div>客户: 李小强</div> <div class="sell-status "> 单号:234545432</div>
+						</div>
+						<div class="goods-info">
+							<div class="img-wrap"><img src="img/futi.png" alt=""></div>
+							<div class="goods-detail">
+								<p class="p-name">汉瑞木业 | 全进口实木扶梯定制 多种颜色选 经久耐用 种颜色选 经久耐用 种颜色选 经久耐用 种颜色选 经久耐用 美观大方 尽显您的尊贵</p>
+								<p class="goods-attr">
+									颜色分类: 棕色+黄花梨
+								</p>
+							</div>
+							<div class="goods-price">
+								<p class="money">￥8288.00</p>
+								<p>x4</p>
+
+								<div class="s-btn-mini" id="logistic-btn-1">物流跟踪</div>
+							</div>
+						</div>
+						<div class="goods-info">
+							<div class="img-wrap"><img src="img/s-2.jpg" alt=""></div>
+							<div class="goods-detail">
+								<p class="p-name">汉瑞木业 | 全进口实木扶梯定制材质可选耐用 美观大方 尽显您的尊贵</p>
+								<p class="goods-attr">
+									颜色分类: 棕色+黄花梨
+								</p>
+								<span class="tag">厂家促销</span>
+							</div>
+							<div class="goods-price">
+								<p class="money">￥8288.00</p>
+								<p>x4</p>
+								<div class="s-btn-mini" id="logistic-btn-2">物流跟踪</div>
+
+							</div>
+						</div>
+						<div class="goods-info">
+							<div class="img-wrap"><img src="img/s-1.jpg" alt=""></div>
+							<div class="goods-detail">
+								<p class="p-name">汉瑞木业 | 全进口实木扶梯定制 多种颜色材质久大方 尽显您的尊贵</p>
+								<p class="goods-attr">
+									颜色分类: 棕色+黄花梨
+								</p>
+							</div>
+							<div class="goods-price">
+								<p class="money">￥8288.00</p>
+								<p>x4</p>
+								<div class="s-btn-mini" id="logistic-btn-3">物流跟踪</div>
+
+							</div>
+						</div>
+
+
+						<div class=" flex-right" >
+							<span>共 5 件 </span>  合计: <span class="total-money"><span class="rmb">￥</span>29777.00</span>
+						</div>
+
+						<!--<div class="flex-right">-->
+						<!--<button class="mui-btn mui-btn-outlined ">申请退货</button>-->
+						<!--</div>-->
+					</div>
+
+					<div class="common-board">
+						<p>销售单号:234234123423421</p>
+						<p>客户账户:daishuwen</p>
+						<p>创建时间:2016-11-22 16:44:12</p>
+						<p>付款时间:2016-11-22 16:44:12</p>
+						<p>发货时间:2016-11-22 16:44:12</p>
+						<p>成交时间:2016-11-22 16:44:12</p>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		mui.ready(function () {
+			mui('.mui-scroll-wrapper').scroll();
+
+			var btn=document.querySelector('#logistic-btn-1');
+			btn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'logistic.html'
+				});
+			});
+		});
+	</script>
+</html>

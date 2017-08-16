@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>功能反馈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+    <div id="app">
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">功能反馈</h1>
+            <!--<span v-on:click="editdown" v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>-->
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+                    <div class="info-item">
+                        <div class="info-title">反馈类型</div>
+                    </div>
+                    <div class="info-item err-tag-group">
+                        <div class="err-tag  mui-btn err-tag-active  ">
+                            功能异常
+                        </div>
+                        <div class="err-tag mui-btn">
+                            体验问题
+                        </div>
+                        <div class="err-tag mui-btn">
+                            新功能建议
+                        </div>
+                        <div class="err-tag mui-btn">
+                            其他
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+                        <textarea  placeholder="遇到问题了？请反馈给我们..."></textarea>
+                    </div>
+
+                    <div class="input-item">
+
+                        <div style="margin-bottom:1rem;">添加附件</div>
+
+                        <div class="icon-group">
+
+                            <div class="vr-icon">
+                                <span class="img-wrap">
+                                    <img src="img/bed.jpg" alt=""/>
+                                </span>
+                                <span class="close-btn">-</span>
+                            </div>
+
+
+                            <div class="add-btn">
+                                +
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">手机号</div>
+                        <input type="text" placeholder="请输入手机号">
+                    </div>
+
+                    <div class="inner">
+                        <button class="mui-btn full-btn  mui-btn-outlined ">提交</button>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+    
+    $(function () {
+        $('.err-tag').on('click',function () {
+            $('.err-tag').removeClass('err-tag-active');
+            $(this).addClass('err-tag-active');
+        })
+    })
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

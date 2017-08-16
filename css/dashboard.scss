@@ -1,0 +1,80 @@
+$mred:#F10215;
+$mdarkred:#a9263f;
+$green1:#59DB5C;
+$green2:#3CC654;
+$blue1:#3CC3FA;
+$blue2:#51B3F4;
+$purple1:#F94378;
+$purple2:#D62EF9;
+$yellow1:#f1c40f;
+$yellow2:#f39c12;
+$orange1:#E38BD9;
+$orange2:#F4665C;
+
+.c-green
+{
+  background: $green1;
+}
+.c-green2
+{
+  background: $green2;
+}
+.c-blue1
+{
+  background: $blue1;
+}
+.c-blue2
+{
+  background: $blue2;
+}
+.c-purple1
+{
+  background: $purple1;
+}
+.c-purple2
+{
+  background: $purple2;
+}
+.c-yellow1
+{
+  background: $yellow1;
+}
+.c-orange
+{
+  background: $orange1;
+}
+.banner
+{
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: .5rem;
+  img
+  {
+    width: 100%;
+  }
+}
+.icon-cell
+{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  padding: .5rem 0;
+  float: left;
+  i.iconfont
+  {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: .3rem;
+  }
+  h5
+  {
+    font-size: .8rem;
+  }
+}

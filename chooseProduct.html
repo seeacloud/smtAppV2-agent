@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>产品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/smtAppStyle-2.css"/>
+    <script src="js/jquery1.12.1.min.js"></script>
+    <script src="js/vue.js"></script>
+
+</head>
+
+
+<body>
+
+<!--<div class="btm-fixed-bar">-->
+    <!--<div class="f-l">-->
+        <!--<i class="iconfont">&#xe698;</i>-->
+        <!--<div class="cart-badge">-->
+            <!--29-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="f-m">共计¥ <span class="total-money">8888.00</span></div>-->
+    <!--<div class="f-r">-->
+        <!--<button type="button">选好了</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+    <div class="p-attr">
+        <div class="sec sec-1">
+
+            <div class="img-wrap round-corner" id="img-wrap">
+                <div><img src="img/t-3.jpg" alt=""></div>
+            </div>
+            <div>
+                <p class=""><span class="total-money"><span class="rmb">￥</span><span
+                        class="money-big">9982.00</span></span></p>
+                <p>请选择:颜色 材质</p>
+            </div>
+            <a href="#sheet1"><i class="iconfont">&#xe69a;</i></a>
+        </div>
+
+        <div class="sec sec-color-and-more">
+            <div class="sec-body attrs">
+                <h4 class="sec-label">颜色</h4>
+                <ul>
+                    <li>
+                        <div class="p-tag">棕色</div>
+                    </li>
+                    <li>
+                        <div class="p-tag p-tag-active">白色</div>
+                    </li>
+                    <li>
+                        <div class="p-tag">原木色</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sec-body attrs">
+                <h4 class="sec-label">材质</h4>
+                <ul>
+                    <li>
+                        <div class="p-tag p-tag-active">橡木</div>
+                    </li>
+                    <li>
+                        <div class="p-tag">黄花梨</div>
+                    </li>
+                    <li>
+                        <div class="p-tag">水曲柳</div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="sec sec-num">
+            <div class="sec-body">
+                <h4 class="sec-label">数量</h4>
+                <div class="p-amount">
+                    <i class="iconfont">&#xe635;</i><input type="text" value="1"><i class="iconfont">&#xe634;</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec sec-btn">
+            <a href="#sheet1">确 定</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 主界面移动、菜单不动 -->
+<div class="mui-off-canvas-wrap mui-draggable">
+
+
+    <!-- 菜单容器 -->
+    <aside class="mui-off-canvas-right" id="offCanvasSide" style="width: 80%;">
+
+
+        <div class="btn-2-fixed-btm fixed-btn-div" style="width:80%; height:40px;">
+            <button class="mui-action-back" id="cancel-category">取消</button>
+            <button style="background:red;color:#fff;">确认</button>
+        </div>
+
+        <!--<div class="btn-2-fixed-btm" style="width:80%; height:40px;">-->
+        <!--<button type="button" class="btn-cancel mui-action-back" style="font-size:.8rem;" id="cancel-category">-->
+        <!--取消-->
+        <!--</button>-->
+        <!--<button type="button" class="btn-confirm" style="font-size:.8rem;">确认</button>-->
+        <!--</div>-->
+
+
+
+        <div class="mui-scroll-wrapper" style="top:0; background:#ffffff;">
+
+            <div class="mui-scroll">
+
+                <div class="off-right" id="filter-panel" style="padding: 15px;">
+
+                <!-- 菜单具体展示内容 -->
+                    <span class="f-title">
+                        品牌
+                    </span>
+                    <div class="filter-sec">
+
+                        <ul class="filter-ul">
+                         <li v-for="(brand,index) in brandList" v-on:tap="toggleOnBrand(index)" v-bind:class="{filterOn:brand.isOn}">
+                             {{brand.name}}
+                             <i class="iconfont tip">&#xe661;</i>
+                         </li>
+                        </ul>
+                    </div>
+
+                    <span class="f-title">
+                        产品类型
+                    </span>
+                    <div class="filter-sec">
+
+                        <ul class="filter-ul">
+                            <li v-for="(cate,index) in category" v-on:tap="toggleOnCate(index)"v-bind:class="{filterOn:cate.isOn}">
+                                {{cate.name}}
+                                <i class="iconfont tip">&#xe661;</i>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span class="f-title">
+                        价格区间(元)
+                    </span>
+                    <div class="filter-sec input-sec">
+                        <div class="filter-input-group">
+                            <input type="text" placeholder="最低价"><span>-</span><input type="text" placeholder="最高价">
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </aside>
+    <!-- 主页面容器 -->
+    <div class="mui-inner-wrap" id="ppList">
+        <!-- 主页面标题 -->
+
+        <div class="search-bar">
+            <input type="text" placeholder="请输入筛选关键字"/> <button class="txt-btn" style="text-align:right;">取消</button>
+            <i class="iconfont close-icon">&#xe621;</i>
+        </div>
+
+        <div class="s-tabs" style="margin-top:52px;">
+            <div class="s-tabs-item item-active">全部</div>
+            <div class="s-tabs-item">家装主材</div>
+            <div class="s-tabs-item ">家庭家具</div>
+            <div class="s-tabs-item" id="offCanvasShow">
+                <a href="#offCanvasSide">更多&middot;&middot;&middot;</a>
+            </div>
+
+        </div>
+
+        <!--下拉加载开始-->
+        <div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="margin-bottom:0;top:94px;">
+
+            <div class="btm-fixed-bar">
+                <div class="f-l">
+                    <i class="iconfont">&#xe698;</i>
+                    <div class="cart-badge">
+                        29
+                    </div>
+                </div>
+                <div class="f-m">共计¥ <span class="total-money">8888.00</span></div>
+                <div class="f-r">
+                    <button type="button">选好了</button>
+                </div>
+            </div>
+            <div class="mui-scroll">
+
+
+                <!--底部控制栏-->
+
+
+                <!--数据列表-->
+
+                <ul class="pp-ul">
+                    <li v-for="(pp,index) in ppList">
+                        <div class="pp-card">
+                            <div class="pp-thumb">
+                                <img v-bind:src="pp.imgUrl">
+                            </div>
+                            <div class="pp-info">
+                                <div class="pp-title">
+                                    {{pp.title}}
+                                </div>
+                                <div class="pp-price-div">¥ <span class="pp-price">{{pp.price}}</span></div>
+
+                                <div class="pp-ctrl">
+                                    <div class="div-l">
+                                        <div class="pp-stock-wrap">库存: <span class="pp-stock">{{pp.stock}}</span>件</div>
+                                    </div>
+
+                                    <div class="div-r">
+                                        <button type="button" v-show="pp.num>0" v-on:tap="ppMinus(index)" class="btn-c"><i class="iconfont">&#xe648;</i></button>
+                                        <span v-if="true" v-show="pp.num>0" class="pp-num">{{pp.num}}</span>
+                                        <button type="button" v-show="!pp.hasSpec" v-on:tap="ppAdd(index)" class="btn-c"><i class="iconfont">&#xe639;</i></button>
+                                        <a href="#sheet1" v-show="pp.hasSpec" class="btn-a"><i class="iconfont">&#xe698;</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+</div>
+
+
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: '#ppList',
+        data: {
+            ppList:[
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | xxxx美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送',
+                    price:'1200',
+                    num:0,
+                    stock:2000,
+                    hasSpec:false
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:745,
+                    hasSpec:false
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                },
+                {
+                    imgUrl:'img/t-1.jpg',
+                    title:'汉瑞木业 | 实木餐桌5美国进口实木餐桌5件套,舒适大方,多种颜色可选。新年促销活动进行中,有买有送件套',
+                    price:'1200',
+                    num:0,
+                    stock:208,
+                    hasSpec:true
+                }
+
+            ]
+        },
+        methods:{
+            ppAdd:function (index) {
+                this.ppList[index].num++;
+                this.ppList[index].stock--;
+            },
+            ppMinus:function (index) {
+                this.ppList[index].num--;
+                this.ppList[index].stock++;
+            }
+
+        }
+    });
+
+
+    var filterPanel=new Vue({
+        el:'#filter-panel',
+        data:{
+            brandList:[
+                {name:'汉瑞木业',isOn:false},
+                {name:'康明木业', isOn:false},
+                {name:'鑫昌鑫', isOn:true},
+                {name:'莫亚木业', isOn:false}
+            ],
+            category:[
+                {name:'门',isOn:false},
+                {name:'窗户',isOn:true},
+                {name:'桌子',isOn:true},
+                {name:'楼梯',isOn:false},
+                {name:'沙发',isOn:false}
+            ]
+        },
+        methods:{
+            toggleOnBrand:function (index) {
+
+                if(this.brandList[index].isOn)
+                {
+                    this.brandList[index].isOn=false;
+                }else
+                {
+                    this.brandList[index].isOn=true;
+
+                }
+            },
+            toggleOnCate:function (index) {
+
+                if(this.category[index].isOn)
+                {
+                    this.category[index].isOn=false;
+                }else
+                {
+                    this.category[index].isOn=true;
+
+                }
+            }
+        }
+    });
+
+
+    mui.init({
+        pullRefresh: {
+            container: '#pullrefresh',
+            down: {
+                callback: pulldownLoad
+            },
+            up: {
+                contentrefresh: '正在加载...',
+                callback: pullupRefresh()
+            }
+        }
+    });
+
+    var count=0;
+    function pulldownLoad() {
+        setTimeout(function () {
+            mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+
+            console.log('loading...');
+        },1500)
+
+    }
+
+    function pullupRefresh() {
+        console.log('refresh...')
+    }
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        var cancelBtn = document.querySelector('#cancel-category');
+        cancelBtn.addEventListener('tap', function () {
+            mui('.mui-off-canvas-wrap').offCanvas().close();
+
+        });
+    });
+</script>
+</body>
+
+</html>

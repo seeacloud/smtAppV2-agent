@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>开单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+        <link rel="stylesheet" href="css/smtAppStyle-2.css"/>
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+		    <h1 class="mui-title">开单</h1>
+		</header>
+		<div class="mui-content" >
+
+
+			<div class="mui-scroll-wrapper" style="top:44px;">
+				<div class="mui-scroll">
+
+					<div>
+						<div class="smt-card">
+                            <div class="item">xxx</div>
+                        </div>
+					</div>
+
+
+
+
+				</div>
+
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		mui.ready(function () {
+			mui('.mui-scroll-wrapper').scroll();
+
+			var btn=document.querySelector('#logistic-btn-1');
+			btn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'logistic.html'
+				});
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav blank-header">
+    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+    <h1 class="mui-title">客户管理</h1>
+
+    <span v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>
+    <span v-if="seendone" class="edit-btn" id="done-btn">完成</span>
+
+    <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+
+</header>
+
+<div v-if="seen2" class="btm-bar">
+    <div class="mui-input-row mui-checkbox" >
+        <label></label>
+        <input name="checkbox" value="Item 1" type="checkbox" id="check-all">
+    </div>
+    <span class="check-label">全选</span>
+
+    <div class="btn-wrap">
+        <button class="full-btn">群发短信</button>
+        <button class="full-btn">新增</button>
+
+    </div>
+
+</div>
+
+<div class="mui-content" id="clientlist">
+    <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+        <div class="mui-scroll">
+
+
+            <div class="tab-group">
+                <button class="tab-btn tab-btn-active" id="tab-btn-1">商机跟进</button>
+                <button class="tab-btn" id="tab-btn-2">意向客户</button>
+                <button class="tab-btn last-no-divide" id="tab-btn-3">成交客户</button>
+            </div>
+            <div class="search">
+            <input type="text" placeholder="姓名/手机号">
+            <button class="btn">
+                <i class="iconfont">&#xe6ac;</i>
+                搜索
+            </button>
+
+            <i class="iconfont x-btn">&#xe621;</i>
+        </div>
+            <div id="c-list-1">
+                <div v-for="client in clientsA" class="client-item">
+                    <div class="client-icon"><img :src="client.img" alt=""/></div>
+                    <div class="client-info">
+                        <div class="client-name">
+                            <div class="name">{{client.name}}</div>
+                            <div class="phone">{{client.phone}}</div>
+                            <div class="date">{{client.date}}</div>
+                        </div>
+                        <p class="client-msg">{{client.info}}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="c-list-2">
+                <div v-for="client in clientsB" class="client-item">
+                    <div v-if="seen2" class="mui-input-row mui-checkbox item-check">
+                        <label></label>
+                        <input name="checkbox1" value="Item 1" type="checkbox" class="client-check">
+                    </div>
+
+                    <div class="client-icon"><img :src="client.img" alt=""/></div>
+                    <div class="client-info">
+                        <div class="client-name">
+                            <div class="name">{{client.name}}</div>
+                            <div class="phone">{{client.phone}}</div>
+                            <div class="date">{{client.date}}</div>
+                        </div>
+                        <p class="client-msg">{{client.info}}</p>
+                    </div>
+
+                    <div v-if="seen2" class="edit-btn-group">
+                        <button class="mui-btn mui-btn-outlined">编辑</button>
+                        <button class="mui-btn mui-btn-outlined">删除</button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="c-list-3">
+                <div v-for="client in clientsC" class="client-item">
+                    <div class="client-icon"><img :src="client.img" alt=""/></div>
+                    <div class="client-info">
+                        <div class="client-name">
+                            <div class="name">{{client.name}}</div>
+                            <div class="phone">{{client.phone}}</div>
+                            <div class="date">{{client.date}}</div>
+                        </div>
+                        <p class="client-msg">{{client.info}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+
+
+
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+
+        $('#c-list-2').hide();
+        $('#c-list-3').hide();
+        $('#edit-btn').hide();
+        $('#done-btn').hide();
+        $('.mui-checkbox').hide();
+        $('.btm-bar').hide();
+        $('.edit-btn-group').hide();
+
+        var tab1=document.querySelector('#tab-btn-1');
+        var tab2=document.querySelector('#tab-btn-2');
+        var tab3=document.querySelector('#tab-btn-3');
+
+        tab1.addEventListener('tap',function () {
+            $('#c-list-2').hide();
+            $('#c-list-3').hide();
+            $('#c-list-1').show();
+            $('#tab-btn-1').addClass('tab-btn-active');
+            $('#tab-btn-2').removeClass('tab-btn-active');
+            $('#tab-btn-3').removeClass('tab-btn-active');
+            $('#edit-btn').hide();
+            $('.btm-bar').hide();
+            $('.item-check').hide();
+            $('.edit-btn-group').hide();
+            $('#done-btn').hide();
+
+        });
+        tab2.addEventListener('tap',function () {
+            $('#c-list-1').hide();
+            $('#c-list-3').hide();
+            $('#c-list-2').show();
+            $('#tab-btn-1').removeClass('tab-btn-active');
+            $('#tab-btn-2').addClass('tab-btn-active');
+            $('#tab-btn-3').removeClass('tab-btn-active');
+            $('#edit-btn').show();
+            $('.btm-bar').hide();
+
+        });
+        tab3.addEventListener('tap',function () {
+            $('#c-list-1').hide();
+            $('#c-list-2').hide();
+            $('#c-list-3').show();
+            $('#tab-btn-1').removeClass('tab-btn-active');
+            $('#tab-btn-2').removeClass('tab-btn-active');
+            $('#tab-btn-3').addClass('tab-btn-active');
+            $('#edit-btn').show();
+            $('.btm-bar').hide();
+            $('.item-check').hide();
+            $('.edit-btn-group').hide();
+            $('#done-btn').hide();
+
+
+
+        });
+        var editBtn=document.querySelector('#edit-btn');
+        editBtn.addEventListener('tap',function () {
+            $('.mui-checkbox').show();
+            $('.btm-bar').show();
+            $('.edit-btn-group').show();
+            $(this).hide();
+            $('#done-btn').show();
+        });
+
+        var checkAllBtn=document.querySelector('#check-all');
+        checkAllBtn.addEventListener('tap',function () {
+            if($(this).is(':checked'))
+            {
+                console.log('uncheck all');
+                $('.client-check').removeAttr('checked');
+            }else
+            {
+                console.log('check all');
+                $('.client-check').attr('checked','checked');
+
+            }
+        });
+
+        var doneBtn=document.querySelector('#done-btn');
+        doneBtn.addEventListener('tap',function () {
+            $('.mui-checkbox').hide();
+            $('.btm-bar').hide();
+            $('.edit-btn-group').hide();
+            $(this).hide();
+            $('#edit-btn').show();
+        })
+
+    });
+
+
+    new Vue({
+        el:'#clientlist',
+        data:{
+            clientsA:[
+                {img:'img/icon2.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon4.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'}
+
+            ],
+            clientsB:[
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon4.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon4.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园000号 翡翠花园2-908',date:''},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓000号 翡翠花园大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:''}
+
+            ],
+            clientsC:[
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon2.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'},
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'上午 8:28'}
+
+            ]
+        }
+    });
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

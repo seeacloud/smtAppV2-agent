@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>发送产品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/promotion.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">发送产品</h1>
+            <span class="share-btn" id="share-btn"><i class="iconfont">&#xe70e;</i>发送</span>
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+
+                    <div class="search">
+                        <input type="text" placeholder="产品名称/类别">
+                        <button class="btn">
+                            <i class="iconfont">&#xe6ac;</i>
+                            搜索
+                        </button>
+
+                        <i class="iconfont x-btn">&#xe621;</i>
+                    </div>
+
+                    <div class="sort-bar">
+                        <div class="sort-item sort">默认排序 <i class="iconfont">&#xe756;</i></div>
+                        <div class="sort-item group last-no-divide">全部分类 <i class="iconfont">&#xe756;</i></div>
+                    </div>
+
+                    <div class="p-card">
+                        <div class="check-wrap">
+                            <div v-if="seen2" class="mui-input-row mui-checkbox item-check">
+                                <label></label>
+                                <input name="checkbox1" value="Item 1" type="checkbox" class="client-check">
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="img/bed.jpg" alt=""/>
+                        </div>
+                        <div class="p-info">
+                            <h4 class="p-title">北美进口橡木餐桌餐椅四件套年中大促销，满1000减200，领券更优惠</h4>
+                            <div>
+                                <span class="p-spec">实木</span>+ <span class="p-spec">透明漆</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-card">
+                        <div class="check-wrap">
+                            <div v-if="seen2" class="mui-input-row mui-checkbox item-check">
+                                <label></label>
+                                <input name="checkbox1" value="Item 1" type="checkbox" class="client-check">
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="img/bed.jpg" alt=""/>
+                        </div>
+                        <div class="p-info">
+                            <h4 class="p-title">北美进口橡木餐桌餐椅四件套年中大促销，满1000减200，领券更优惠</h4>
+                            <div>
+                                <span class="p-spec">实木</span>+ <span class="p-spec">透明漆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的门店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/promotion.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">我的门店</h1>
+            <span class="share-btn" id="share-btn"><i class="iconfont">&#xe625;</i>分享</span>
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+                    <div class="store-card">
+                        <div class="icon">
+                            <img src="img/moyalogo.jpg" alt=""/>
+                        </div>
+                        <div class="card-info">
+                            <h4 class="title">莫亚木业长沙旗舰店</h4>
+                            <p>莫亚木业是一家大型的家具生产厂商，主要经营沙发，桌椅，床铺，衣柜等家庭家具。</p>
+                            <p class="addr"><i class="iconfont">&#xe60b;</i>长沙市五一路五一广场4楼</p>
+                        </div>
+                    </div>
+
+                    <div class="sort-bar">
+                        <div class="sort-item sort">默认排序 <i class="iconfont">&#xe756;</i></div>
+                        <div class="sort-item group last-no-divide">全部分组 <i class="iconfont">&#xe756;</i></div>
+                    </div>
+
+                    <div class="p-card">
+                        <div class="icon">
+                            <img src="img/bed.jpg" alt=""/>
+                        </div>
+                        <div class="p-info">
+                            <h4 class="p-title">北美进口橡木餐桌餐椅四件套年中大促销，满1000减200，领券更优惠</h4>
+                            <div>
+                                <span class="p-spec">实木</span>+ <span class="p-spec">透明漆</span>
+                            </div>
+                            <div class="price">¥ <span class="money">1988.00</span></div>
+                        </div>
+                    </div>
+                    <div class="p-card">
+                        <div class="icon">
+                            <img src="img/bed.jpg" alt=""/>
+                        </div>
+                        <div class="p-info">
+                            <h4 class="p-title">北美进口橡木餐桌餐椅四件套年中大促销，满1000减200，领券更优惠</h4>
+                            <div>
+                                <span class="p-spec">实木</span>+ <span class="p-spec">透明漆</span>
+                            </div>
+                            <div class="price">¥ <span class="money">1988.00</span></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

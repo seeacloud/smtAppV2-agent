@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<div class="search-bar">
+				<a class="mui-action-back mui-icon"> <i class="iconfont">&#xe69a;</i></a>
+				<div class="search-group">
+					<div class="search-group-inner">
+						<div class="input-wrap"><input type="text" placeholder="请输入搜索关键字"></div>
+						<div class="icon-wrap" id="search-btn"><i class="iconfont">&#xe6ac;</i></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mui-scroll-wrapper" id="search-scroll" style="top:44px;background:#fff;">
+			    <div class="mui-scroll">
+			        <!--这里放置真实显示的DOM内容-->
+					<div class="mui-content-inner">
+						<div class="search-div">
+							<div class="div-row"><h5>最近搜索</h5> <i class="iconfont push-right">&#xe69d;</i></div>
+							<div class="p-tag">扶梯</div><div class="p-tag">沙发</div><div class="p-tag">汉瑞木业</div>
+						</div>
+
+						<div class="search-div">
+							<div class="div-row"><h5>热门搜索</h5> <i class="iconfont push-right">&#xe650;</i></div>
+							<div class="p-tag">黄花梨</div><div class="p-tag">实木雕花大床</div><div class="p-tag">汉瑞木业</div>
+							<div class="p-tag">茶几</div><div class="p-tag">实木扶梯</div><div class="p-tag">餐桌</div>
+						</div>
+					</div>
+			    </div>
+			</div>
+			
+		    
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+
+			mui.ready(function () {
+				mui('#search-scroll').scroll();
+
+				var searchBtn=document.querySelector('#search-btn');
+				searchBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'searchResult.html',
+						id:'searchResult'
+					});
+				});
+			});
+
+
+		</script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

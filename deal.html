@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>成交</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+    <div id="app">
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">成交</h1>
+            <!--<span v-on:click="editdown" v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>-->
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+
+
+                    <div class="info-item">
+                        <div class="info-title">姓名</div>
+                        <div class="info-content">李先生</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">时间</div>
+                        <input type="text" placeholder="调用日期控件">
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">成交金额</div>
+                        <input type="text" placeholder="请输入金额">
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-title">成交类型</div>
+                        <div class="info-content"><i class="iconfont">&#xe6a7;</i><span>选择</span> </div>
+                    </div>
+                    <div class="info-item">
+                        <textarea rows="5" >请输入备注...
+                        </textarea>
+                    </div>
+
+                    <div class="inner">
+                        <button class="mui-btn full-btn  mui-btn-outlined ">保存</button>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

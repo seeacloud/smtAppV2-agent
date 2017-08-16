@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css" />
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav smt-header" id="smt-header">
+			<div class="header-left">
+				<img src="img/smtLogo.png" alt="" class="smt-logo"/>
+			</div>
+			<div class="header-center" id="header-center">
+				<h1 id="title" class="">戴平江</h1>
+				<!--<div class="s-search">实木扶梯 <i class="iconfont">&#xe6ac;</i></div>-->
+			</div>
+			<div class="header-right" id="header-right">
+				<i class="iconfont" id="meBtn">&#xe6b8;</i>
+                <!--<i class="iconfont">&#xe698;</i>-->
+                <!--<div class="mui-badge badge-cart">1</div>-->
+			</div>
+		</header>
+		<div class="hairline-smt-bar-tab"></div>
+		<nav class="mui-bar mui-bar-tab smt-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="home.html">
+				<span class="mui-icon"> <i class="iconfont">&#xe606;</i></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="products.html">
+				<span class="mui-icon "> <i class="iconfont">&#xe603;</i></span>
+				<span class="mui-tab-label">产品</span>
+			</a>
+			<a class="mui-tab-item" href="sell.html">
+				<span class="mui-icon"> <i class="iconfont">&#xe875;</i></span>
+				<span class="mui-tab-label">销售</span>
+			</a>
+			<a class="mui-tab-item" href="order.html">
+				<span class="mui-icon "> <i class="iconfont">&#xe602;</i></span>
+				<span class="mui-tab-label">订货</span>
+			</a>
+		</nav>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery1.12.1.min.js"></script>
+
+		<script type="text/javascript" charset="utf-8"> 
+			 //mui初始化
+			mui.init();
+			var subpages = ['home.html', 'products.html', 'sell.html', 'order.html'];
+			var subpage_style = {
+				top: '44px',
+				bottom: '51px'
+			};
+			
+			var aniShow = {};
+			
+			 //创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+				
+				var meBtn=document.querySelector('#meBtn');
+				meBtn.addEventListener('tap',function()
+				{
+					mui.openWindow({
+						url:'me.html',
+						id:'me'
+					});
+				});
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 4; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						mui.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}
+			});
+			 //当前激活选项
+			var activeTab = subpages[0];
+			var title = document.getElementById("title");
+			var headerCenter=document.getElementById('header-center');
+			 var headerRight=document.getElementById('header-right');
+			 //选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.getAttribute('href');
+				if (targetTab == activeTab) {
+					return;
+				}
+				//更换标题
+//				title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+
+				switch (this.querySelector('.mui-tab-label').innerHTML)
+				{
+					case '首页':
+						headerCenter.innerHTML="<h1>戴平江</h1>"
+						headerRight.innerHTML="<i class=\"iconfont\" id=\"meBtn\">&#xe6b8;</i>";
+//						headerRight.innerHTML="<i class=\"iconfont\" id=\"cart-btn\">&#xe698;</i><div class=\"mui-badge badge-cart\">12</div>";
+						var meBtn=document.querySelector('#meBtn');
+						meBtn.addEventListener('tap',function(){
+							mui.openWindow({
+								url:'me.html',
+								id:'me'
+							});
+						});
+						break;
+					case '产品':
+						headerCenter.innerHTML="<div class=\"s-search\" id=\"search-bar\">实木扶梯 <i class=\"iconfont\">&#xe6ac;</i></div>";
+						headerRight.innerHTML="<i class=\"iconfont\" id=\"cart-btn\">&#xe698;</i><div class=\"mui-badge badge-cart\">12</div>";
+							addEvtCart();
+
+						var searchBtn=document.querySelector('#search-bar');
+						searchBtn.addEventListener('tap',function () {
+							mui.openWindow({
+								url:'search.html',
+								id:'search'
+							});
+						});
+						break;
+					default:break;
+
+				}
+				
+				function addEvtCart() {
+
+					console.log('addEvtCart');
+					$('#cart-btn').on('tap',function () {
+						mui.openWindow({
+							url:'cart.html',
+							id:'cart'
+						});
+					});
+
+				}
+				//显示目标选项卡
+				//若为iOS平台或非首次显示，则直接显示
+				if(mui.os.ios||aniShow[targetTab]){
+					plus.webview.show(targetTab);
+				}else{
+					//否则，使用fade-in动画，且保存变量
+					var temp = {};
+					temp[targetTab] = "true";
+					mui.extend(aniShow,temp);
+					plus.webview.show(targetTab,"fade-in",300);
+				}
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			 //自定义事件，模拟点击“首页选项卡”
+			document.addEventListener('gohome', function() {
+				var defaultTab = document.getElementById("defaultTab");
+				//模拟首页点击
+				mui.trigger(defaultTab, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+				if (defaultTab !== current) {
+					current.classList.remove('mui-active');
+					defaultTab.classList.add('mui-active');
+				}
+			});
+
+
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>开户服务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+<div id="app">
+
+<header class="mui-bar mui-bar-nav blank-header">
+    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+    <h1 class="mui-title">客户服务</h1>
+</header>
+
+<div class="fix-btm-menu">
+    <div class="m-item mui-text-center"><i class="iconfont">&#xe638;</i>电话客服</div>
+    <div class="m-item mui-text-center"><i class="iconfont">&#xe6f6;</i>在线客服</div>
+    <div class="m-item mui-text-center"><i class="iconfont">&#xea58;</i>功能反馈</div>
+</div>
+
+<div class="mui-content" id="clientlist">
+    <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+        <div class="mui-scroll">
+
+
+            <div class="tab-group">
+                <button v-on:click='tab1down' v-bind:class="{'tab-btn-active':content1}" class="tab-btn" id="tab-btn-1">常见问题</button>
+                <button v-on:click='tab2down' v-bind:class="{'tab-btn-active':content2}" class="tab-btn" id="tab-btn-2">订单类</button>
+                <button v-on:click='tab3down' v-bind:class="{'tab-btn-active':content3}" class="tab-btn last-no-divide" id="tab-btn-3">配送类</button>
+            </div>
+            <div class="search">
+            <input type="text" placeholder="问题关键字">
+            <button class="btn">
+                <i class="iconfont">&#xe6ac;</i>
+                搜索
+            </button>
+
+            <i class="iconfont x-btn">&#xe621;</i>
+        </div>
+            <div v-if="content1" id="c-list-1">
+                <div class="q-item">
+                    <a href="">山木通的收费标准是怎么计算的？</a>
+                </div>
+                <div class="q-item">
+                    <a href="">山木通是什么？</a>
+                </div>
+                <div class="q-item">
+                    <a href="">山木通能做什么？</a>
+                </div>
+                
+            </div>
+            <div v-if="content2" id="c-list-2">
+                <div class="q-item">
+                    <a href="">山木通的收费标准是怎么计算的？</a>
+                </div>
+
+                <div class="q-item">
+                    <a href="">山木通能做什么？</a>
+                </div>
+            </div>
+            <div v-if="content3" id="c-list-3">
+
+                <div class="q-item">
+                    <a href="">山木通是什么？</a>
+                </div>
+                <div class="q-item">
+                    <a href="">山木通能做什么？</a>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+
+
+
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            seen2:false,
+            seen3:false,
+            seenedit:false,
+            seendone:false,
+            currentTab:1,
+            content1:true,
+            content2:false,
+            content3:false
+
+        },
+        methods:{
+            tab1down:function () {
+                this.content1=true;
+                this.content2=false;
+                this.content3=false;
+                this.seenedit=false;
+                this.seendonw=false;
+                this.currentTab=1;
+                this.seen1=false;
+                this.seen2=false;
+                this.seenedit=false;
+                this.seendone=false;
+            },
+            tab2down:function () {
+                this.content1=false;
+                this.content2=true;
+                this.content3=false;
+                this.seenedit=true;
+                this.seendone=false;
+                this.currentTab=2;
+                this.seen3=false;
+                this.seen2=false;
+
+            },
+            tab3down:function () {
+                this.content1=false;
+                this.content2=false;
+                this.content3=true;
+                this.seenedit=true;
+                this.seendone=false;
+                this.currentTab=3;
+                this.seen2=false;
+                this.seen3=false;
+            },
+            editdown:function () {
+                if(this.currentTab===2)
+                {
+                    this.seen2=true;
+                    this.seen3=false;
+                    this.seenedit=false;
+                    this.seendone=true;
+                }else if(this.currentTab===3)
+                {
+                    this.seen2=false;
+                    this.seen3=true;
+                    this.seenedit=false;
+                    this.seendone=true;
+                }
+            },
+            donedown:function () {
+                if(this.currentTab===2)
+                {
+                    this.seen2=false;
+                    this.seen3=false;
+                    this.seenedit=true;
+                    this.seendone=false;
+                }else if(this.currentTab===3)
+                {
+                    this.seen2=false;
+                    this.seen3=false;
+                    this.seenedit=true;
+                    this.seendone=false;
+                }
+            }
+        }
+    });
+
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

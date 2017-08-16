@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VR实景</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/promotion.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">VR实景</h1>
+            <span class="share-btn" id="share-btn"><i class="iconfont add-icon">&#xe877;</i></span>
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#eee;">
+                <div class="mui-scroll">
+                    <div class="vr-card">
+                        <div class="vr-content">
+                            <div class="icon">
+                                <img src="img/bed.jpg" alt=""/>
+                            </div>
+                            <div class="vr-info">
+                                <h4 class="vr-title">莫亚木业实木床VR实景展示</h4>
+                            </div>
+                        </div>
+
+                        <div class="vr-toolbar">
+                            <button class="mui-btn del-btn btn-mini">删除</button>
+
+                        </div>
+                    </div>
+                    <div class="vr-card">
+                        <div class="vr-content">
+                            <div class="icon">
+                                <img src="img/bed.jpg" alt=""/>
+                            </div>
+                            <div class="vr-info">
+                                <h4 class="vr-title">莫亚木业实木床VR实景展示</h4>
+                            </div>
+                        </div>
+
+                        <div class="vr-toolbar">
+                            <button class="mui-btn del-btn btn-mini">删除</button>
+                        </div>
+                    </div>
+                    <div class="vr-card">
+                        <div class="vr-content">
+                            <div class="icon">
+                                <img src="img/bed.jpg" alt=""/>
+                            </div>
+                            <div class="vr-info">
+                                <h4 class="vr-title">莫亚木业实木床VR实景展示</h4>
+                            </div>
+                        </div>
+
+                        <div class="vr-toolbar">
+                            <button class="mui-btn del-btn btn-mini">删除</button>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

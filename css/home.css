@@ -1,0 +1,78 @@
+.icon-grid {
+  display: inline-flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  width: 25%;
+  margin: .5rem 0; }
+  .icon-grid .icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; }
+  .icon-grid i.iconfont {
+    font-size: 1.5rem; }
+  .icon-grid .icon-title {
+    margin: .3rem 0; }
+
+.color1 {
+  background: #CD2329; }
+
+.color2 {
+  background: #3CC654; }
+
+.color3 {
+  background: #3CC3FA; }
+
+.color4 {
+  background: orange; }
+
+.color5 {
+  background: #51B3F4; }
+
+.color6 {
+  background: #E38BD9; }
+
+.color7 {
+  background: #F94378; }
+
+.color8 {
+  background: #59DB5C; }
+
+.color9 {
+  background: #F4665C; }
+
+.color10 {
+  background: #D62EF9; }
+
+.color11 {
+  background: #D54083; }
+
+.todo-cell-group {
+  display: flex;
+  flex-direction: row; }
+
+.todo-cell {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+  .todo-cell .todo-num {
+    display: inline-block;
+    font-size: 1.2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: .5rem;
+    line-height: 3.6rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+  .todo-cell .todo-title {
+    margin: .5rem; }
+
+/*# sourceMappingURL=home.css.map */

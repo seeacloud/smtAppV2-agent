@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新增VR实景</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/promotion.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">新增VR实景</h1>
+            <!--<span class="share-btn" id="share-btn"><i class="iconfont">&#xe877;</i>新增</span>-->
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+                    <div class="input-item">
+                        <input type="text" placeholder="请输入实景标题">
+                    </div>
+
+                    <div class="input-item">
+                        <textarea name="vr-info" id="" cols="" rows="5" placeholder="请输入VR实景介绍"></textarea>
+                    </div>
+
+                    <div class="input-item">
+
+                        <div style="margin-bottom:1rem;">附件信息</div>
+
+                        <div class="icon-group">
+
+                            <div class="vr-icon">
+                                <span class="img-wrap">
+                                    <img src="img/bed.jpg" alt=""/>
+                                </span>
+                                <span class="close-btn">-</span>
+                            </div>
+
+
+                            <div class="add-btn">
+                                +
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="full-btn-wrap">
+                        <button class="mui-btn">保存</button>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

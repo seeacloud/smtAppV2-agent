@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>管理中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/dashboard.css"/>
+</head>
+
+<body style="background:#fff;">
+<header class="mui-bar mui-bar-nav smt-header" id="smt-header">
+    <div class="header-left">
+        <img src="img/smtLogo.png" alt="" class="smt-logo"/>
+    </div>
+    <div class="header-center" id="header-center">
+        <h1 id="title" class="" style="font-weight:normal;">客户关系管理</h1>
+        <!--<div class="s-search">实木扶梯 <i class="iconfont">&#xe6ac;</i></div>-->
+    </div>
+    <div class="header-right" id="header-right">
+        <span style="font-size:.8rem;color:#fff;">退出</span>
+        <!--<i class="iconfont" id="meBtn">&#xe6b8;</i>-->
+        <!--<i class="iconfont">&#xe698;</i>-->
+        <!--<div class="mui-badge badge-cart">1</div>-->
+    </div>
+</header>
+    <div class="mui-content" style="background:#fff;">
+        <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+            <div class="mui-scroll">
+                <div class="banner"><img src="img/dashboard-banner.png" alt=""/></div>
+                <div class="cell-group">
+                    <div class="icon-cell">
+                        <i class="iconfont c-green">&#xe62d;</i>
+                        <h5>查看门店</h5>
+                    </div>
+                    <div class="icon-cell">
+                        <i class="iconfont c-blue1">&#xe626;</i>
+                        <h5>客户登记</h5>
+                    </div>
+
+                    <div class="icon-cell">
+                        <i class="iconfont c-yellow1">&#xe637;</i>
+                        <h5>我的</h5>
+                    </div>
+                    <div class="icon-cell">
+                        <i class="iconfont c-orange">&#xe619;</i>
+                        <h5>消息</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/mui.min.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+    });
+</script>
+
+<script src="js/smt-app.js"></script>
+<script src="js/jquery1.12.1.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

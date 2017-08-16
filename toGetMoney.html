@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>待收款</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+		
+	</head>
+
+	<body>
+	<header class="mui-bar mui-bar-nav blank-header">
+		<a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+		<h1 class="mui-title">待收款</h1>
+	</header>
+		<div class="mui-content" style="padding-top:45px;">
+
+
+
+			<div class="mui-scroll-wrapper" id="sell-scroll" style="top:40px;background: #f0f0f0;">
+			    <div class="mui-scroll">
+			        <!--这里放置真实显示的DOM内容-->
+			<div class="goods-card" >
+				<div class="goods-title">
+					<div>客户: 李小强</div> <div class="sell-status "> [ 待收款 ]</div>
+				</div>
+
+				<div class="goods-info-group">
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/t-4.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name">汉瑞木业 | 全进口实木扶梯定制 多种颜色阿萨德发材质可选 经久耐用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+						</div>
+						<div class="goods-price">
+							<p class="money">￥8288.00</p>
+							<p>x4</p>
+								<div class="s-btn-mini track-btn" id="track-btn-1">跟踪</div>
+								<div class="track-panel" id="track-panel-1" style="display:none;">
+									<ul>
+										<li class="li-active">已发货 <span class="date">2016-12-01 14:22</span></li>
+										<li>已订货 <span class="date">2016-12-01 14:22</span></li>
+										<li>已接单 <span class="date">2016-12-01 14:22</span></li>
+									</ul>
+								</div>
+						</div>
+					</div>
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/t-5.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name">汉瑞木业 | 全进口实木扶梯定制材质可选 经久耐用 美观阿萨德发</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+							<span class="tag">厂家促销</span>
+						</div>
+						<div class="goods-price">
+							<p class="money">￥8288.00</p>
+							<p>x4</p>
+							<div class="s-btn-mini track-btn" id="track-btn-2">跟踪</div>
+
+						</div>
+					</div>
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/t-1.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name">汉瑞木业 | 全进口实木扶阿斯顿发达质久耐用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+						</div>
+						<div class="goods-price">
+							<p class="money">￥8288.00</p>
+							<p>x4</p>
+							<div class="s-btn-mini track-btn" id="track-btn-3">跟踪</div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class=" flex-right" >
+				<span>共 5 件 </span>  合计: <span class="total-money"><span class="rmb">￥</span>29777.00</span>
+				</div>
+
+				<div class="flex-right">
+					<button class="mui-btn" id="detail-btn">详情</button>
+					<button class="mui-btn" id="get-money-btn">订货</button>
+					<button class="mui-btn btn-active" id="btn-order-1">收款</button>
+				</div>
+			</div>
+
+			<div class="goods-card" >
+				<div class="goods-title">
+					<div>客户: 赵刚</div> <div class="sell-status "> [ 待收款 ]</div>
+				</div>
+
+				<div class="goods-info-group">
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/d-4.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name">汉瑞木业 | 全进口实木扶梯定制 多种颜色材质质多颜经久耐用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+						</div>g
+						<div class="goods-price">
+							<p class="money">￥8288.00</p>
+							<p>x4</p>
+							<div class="s-btn-mini track-btn" id="track-btn-6">跟踪</div>
+
+						</div>
+					</div>
+				</div>
+
+
+				<div class=" flex-right" >
+                    <span>共 1 件 </span>  合计: <span class="total-money"><span class="rmb">￥</span>9757.00</span>
+				</div>
+
+				<div class="flex-right">
+					<button class="mui-btn">详情</button>
+					<button class="mui-btn">送货</button>
+					<button class="mui-btn btn-active">收款</button>
+				</div>
+			</div>
+
+			<div class="the-end">- End -</div>
+			    </div>
+			</div>
+			
+
+			
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		mui.ready(function () {
+
+			var trackBtn1=document.querySelector('#track-btn-1');
+			var $trackPanel1=$('#track-panel-1');
+
+			trackBtn1.addEventListener('tap',function () {
+				$trackPanel1.toggle();
+
+			});
+
+			var getMoneyBtn=document.querySelector('#get-money-btn');
+			getMoneyBtn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'getMoney.html'
+				});
+			});
+
+			var btnOrder1=document.querySelector('#btn-order-1');
+			btnOrder1.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'submitOrder.html'
+				});
+			});
+
+			var btn=document.querySelector('#detail-btn');
+			btn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'sellDetail.html'
+				});
+			});
+			mui('#sell-scroll').scroll();
+
+			mui('.goods-card').on('tap','.p-name',function () {
+				mui.openWindow({
+					url:'productDetail.html'
+				});
+			});
+
+		});
+	</script>
+
+	<script src="js/jquery1.12.1.min.js"></script>
+	<script src="js/smt-app.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

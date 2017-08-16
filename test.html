@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tag
+        {
+            position: relative;
+            padding:5px;
+            background: #ccc;
+            display: inline-block;
+
+        }
+        .tag:before
+        {
+            position: absolute;
+            content: '';
+            pointer-events: none;
+            box-sizing: border-box;
+            width:200%;
+            height:200%;
+            left:0;
+            top:0;
+            border-radius: 8px;
+            border:1px solid #ddd;
+            -webkit-transform: scale(.5);
+            -moz-transform: scale(.5);
+            -ms-transform: scale(.5);
+            -o-transform: scale(.5);
+            transform: scale(.5);
+            -webkit-transform-origin:0 0;
+            -moz-transform-origin:0 0;
+            -ms-transform-origin:0 0;
+            -o-transform-origin:0 0;
+            transform-origin:0 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<style>
+    p:after{content:'我是后缀'}
+</style>
+
+
+<p>正文内容</p>
+
+<script>
+    var chageAfter=function(t,s){
+        s=document.createElement('styleooo');
+        s.innerText=t;
+        document.body.appendChild(s);
+    };
+
+    document.onclick=function(){
+        changeAfter('p:after{content:\'修改一下\'}');
+    };
+</script>
+
+
+</body>
+</html>

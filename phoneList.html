@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>导入联系人</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+
+
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">导入联系人</h1>
+            <!--<span v-on:click="editdown" v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>-->
+            <span class="edit-btn" id="done-btn">导入</span>
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll" id="app">
+                    <div class="search">
+                    <input type="text" placeholder="姓名/手机号" v-model="searchTxt" ref="searchTxt">
+                    <button class="btn">
+                        <i class="iconfont">&#xe6ac;</i>
+                        搜索
+                    </button>
+                    <i class="iconfont x-btn" v-on:click="clear">&#xe621;</i>
+                </div>
+                    <template>
+                        <div>
+                            <div v-for="(person,index) in contact" v-on:click='contactClick(index)' v-bind:class="{'contact-item-active': onIndex===index}" class="contact-item" >
+                                <div class="name">{{person.name}}</div>
+                                <div class="phone">{{person.phone}}</div>
+                                <!--<div v-if="choosen" class="choose"><i class="iconfont">&#xe664;</i></div>-->
+                            </div>
+                        </div>
+                    </template>
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+
+
+    new Vue({
+        el:'#app',
+        data:{
+            onIndex:null,
+            searchTxt:'',
+            contact:[
+                {name:'阿文',phone:'186 9987 8865'},
+                {name:'波哥',phone:'177 9988 6666'},
+                {name:'曹国富',phone:'186 9899 9999'},
+                {name:'冬瓜',phone:'186 8888 8888'},
+                {name:'阿文',phone:'186 9987 8865'},
+                {name:'波哥',phone:'177 9988 6666'},
+                {name:'曹国富',phone:'186 9899 9999'},
+                {name:'冬瓜',phone:'186 8888 8888'},
+                {name:'阿文',phone:'186 9987 8865'},
+                {name:'波哥',phone:'177 9988 6666'},
+                {name:'曹国富',phone:'186 9899 9999'},
+                {name:'冬瓜',phone:'186 8888 8888'},
+                {name:'阿文',phone:'186 9987 8865'},
+                {name:'波哥',phone:'177 9988 6666'},
+                {name:'曹国富',phone:'186 9899 9999'},
+                {name:'冬瓜',phone:'186 8888 8888'},
+                {name:'阿文',phone:'186 9987 8865'},
+                {name:'波哥',phone:'177 9988 6666'},
+                {name:'曹国富',phone:'186 9899 9999'},
+                {name:'冬瓜',phone:'186 8888 8888'},
+                {name:'付智武',phone:'188 7777 7777'}
+            ]
+        },
+
+        methods:{
+            contactClick:function (index) {
+                this.onIndex=index;
+            },
+            clear:function () {
+                
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

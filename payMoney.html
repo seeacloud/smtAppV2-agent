@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>付款</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css"/>
+
+
+</head>
+<body>
+
+<header class="mui-bar mui-bar-nav blank-header">
+    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+    <h1 class="mui-title">付款</h1>
+    <!--<i class="iconfont" id="cart-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe698;</i>-->
+
+</header>
+<div class="mui-content">
+
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+
+            <div class="sec" >
+                <div class="sec-inner">
+                    <div class="row-l-m-r row-l-m-r-get-money">
+                        <div class="left" >
+                            <p>订单金额:</p>
+                            <span class="money-1rem"><span class="rmb">￥</span>9757.00</span>
+                        </div>
+                        <div class="middle" >
+                            <p>已付:</p>
+                            <span class="money-1rem"> <span class="rmb">￥</span>4000.00</span>
+                        </div>
+
+                        <div class="right" >
+                            <p>欠款:</p>
+                            <span class="money-1rem"> <span class="rmb">￥</span>5757.00</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec" style="padding:0;">
+                <div class="sec-title"><h5>使用资金账户付款</h5></div>
+                <div class="sec-inner" style="padding:15px;" >
+                    <div class="row-l-m-r">
+                        <div class="left">预付款账户</div>
+                        <div class="middle"><div class="input-wrap"><input type="text"></div></div>
+                        <div class="right">
+                            <div class="amount">余额: </div>
+                            <div class="amount-num">
+                                <span class="money"><span class="rmb">￥</span>1200.89</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row-l-m-r">
+                        <div class="left">返点账户</div>
+                        <div class="middle"><div class="input-wrap"><input type="text"></div></div>
+                        <div class="right">
+                            <div class="amount">余额: </div>
+
+                            <div class="amount-num">
+                                <span class="money"><span class="rmb">￥</span>0.00</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec" style="padding:0;">
+                <div class="sec-title pay-way-title">
+                    <div class="tabs-wrap">
+                        <div class="s-tabs tabs-pay-way">
+                            <div class="s-tabs-item item-active" id="offline-btn">线下支付</div>
+                            <div class="s-tabs-item" id="online-btn">线上支付</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sec-inner sec-inner-pay" id="pay-online" style="display:none;">
+
+
+
+
+                    <div class="row-l-m-r pay-way-row">
+                        <div class="left">支付方式</div>
+                        <div class="middle">
+
+                            <div class="pay-tab pay-tab-active">
+                                <img src="img/weixinpay.png" alt="" style="width:80px;">
+                            </div>
+                            <br>
+                            <div class="pay-tab">
+                                <img src="img/alipay.png" alt="" style="width:55px;">
+                            </div>
+
+                        </div>
+                        <!--<div class="right"></div>-->
+                    </div>
+
+                    <div class="row-l-m-r">
+                        <div class="left"> 付款金额</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text" class="money"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+
+                </div>
+
+                <div class="sec-inner sec-inner-pay" id="pay-offline" style="display:block;">
+                    <div class="row-l-m-r">
+                        <div class="left"> 付款金额</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text" class="money"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+
+                    <div class="row-l-m-r">
+                        <div class="left"></div>
+                        <div class="middle"> <div class="input-wrap"> <span class="red-link" id="bank-list-btn">+选择收款账户</span></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+
+                    <div class="row-l-m-r">
+                        <div class="left">账户名称</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">开户银行</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">开户账号</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">付款日期</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</div>
+                        <div class="middle"> <div class="input-wrap"> <input type="text"></div></div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                    <div class="row-l-m-r">
+                        <div class="left">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</div>
+                        <div class="middle">
+                            <div>
+                                <div class="s-btn-mini">上传附件</div>
+
+                            </div>
+                        </div>
+                        <!--<div class="right"></div>-->
+                    </div>
+
+                    <div class="row-l-m-r">
+                        <div class="left"></div>
+                        <div class="middle">
+                            <p class="right">付款凭证.jpg  <a href="" style="margin-left:10px;">删除</a></p>
+                        </div>
+                        <!--<div class="right"></div>-->
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    <div class="btn-2-fixed-btm">
+        <div class="btn-cancel mui-action-back">取消</div>
+        <div class="btn-confirm">确认</div>
+    </div>
+
+</div>
+</body>
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/echarts.simple.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script>
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+
+    mui.ready(function () {
+
+        var bankBtn=document.querySelector('#bank-list-btn');
+        bankBtn.addEventListener('tap',function () {
+            mui.openWindow({
+                url:'accountList.html'
+            });
+        });
+
+        var onlineBtn=document.querySelector('#online-btn');
+        var offlineBtn=document.querySelector('#offline-btn');
+        var $onlinePay=$('#pay-online')
+        var $offlinePay=$('#pay-offline');
+
+        onlineBtn.addEventListener('tap',function () {
+            $onlinePay.show();
+            $offlinePay.hide();
+        });
+        offlineBtn.addEventListener('tap',function () {
+            $onlinePay.hide();
+            $offlinePay.show();
+        });
+
+        mui('.mui-scroll-wrapper').scroll();
+
+    });
+</script>
+
+
+</html>

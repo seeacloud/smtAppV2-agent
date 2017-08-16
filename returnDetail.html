@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>退货详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+		    <h1 class="mui-title">退货详情</h1>
+		</header>
+		<div class="mui-content" >
+
+			<div class="sec return-status-panel">
+				<div class="sec-inner">
+					<div class="return-steps">
+						<div class="step step-active"></div><span class="step-label">提交退单</span>
+					</div>
+					<div class="return-steps">
+						<div class="step step-active"></div><span class="step-label">退单审核</span>
+					</div>
+					<div class="return-steps">
+						<div class="step step-active"></div><span class="step-label">收货确认</span>
+					</div>
+					<div class="return-steps">
+						<div class="step"></div><span class="step-label">退款确认</span>
+					</div>
+					<div class="return-steps">
+						<div class="step"></div>
+						<span class="step-label">收款确认</span>
+					</div>
+					<div class="return-steps">
+						<div class="step"></div><span class="step-label">退货完成</span>
+					</div>
+				</div>
+			</div>
+			<div class="goods-card" >
+				<div class="goods-title goods-title-return">
+					<div class="m-name">厂家: 汉瑞木业有限公司</div> <div class="return-num "> 关联订单号:234545432</div>
+				</div>
+				<div class="goods-info">
+					<div class="img-wrap"><img src="img/futi.png" alt=""></div>
+					<div class="goods-detail">
+						<p>汉瑞木业 | 全进口实木扶梯定制 多种颜色选 经久耐用 美观大方 尽显您的尊贵</p>
+						<p class="goods-attr">
+							颜色分类: 棕色+黄花梨
+						</p>
+					</div>
+					<div class="goods-price">
+						<p class="money">￥8288.00</p>
+						<p>x4</p>
+					</div>
+				</div>
+
+
+
+
+				<div class=" flex-right" >
+				<span>共 1 件,  </span>  申请退款金额: <span class="total-money"><span class="rmb">￥</span>8288.00</span>
+				</div>
+				<div class=" flex-right" >
+					<span> </span>  批准退款金额: <span class="total-money"><span class="rmb">￥</span>8200.00</span>
+				</div>
+
+				<!--<div class="flex-right">-->
+					<!--<button class="mui-btn mui-btn-outlined ">申请退货</button>-->
+				<!--</div>-->
+			</div>
+
+			<div class="sec sec-return">
+				<div class="sec-title">退款信息</div>
+				<div class="sec-inner">
+					<p>账户名称: 戴树文</p>
+					<p>开户银行: 工商银行湖南长沙市雨花支行</p>
+					<p>银行账号: 6228 8888 8888 8888</p>
+					<p>退货时间: 2016-12-01 14:22</p>
+					<p>备注信息: 暂无</p>
+
+					<p>附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件: 退货单.jpg</p>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		mui.ready(function () {
+
+		});
+	</script>
+</html>

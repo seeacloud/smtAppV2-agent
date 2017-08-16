@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>微信支付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/smtAppStyle-2.css"/>
+    <script src="js/jquery1.12.1.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+
+
+
+<!-- 主界面移动、菜单不动 -->
+<div class="mui-off-canvas-wrap mui-draggable">
+
+
+
+    <div class="mui-inner-wrap" >
+        <!-- 主页面标题 -->
+
+
+        <!--下拉加载开始-->
+        <div id="" class="mui-content mui-scroll-wrapper" style="margin-bottom:0;top:0px;">
+
+
+            <div class="mui-scroll" id="app1">
+                <div class="price-card">
+
+                    <div class="price-card-inner">
+                        <h3 class="price-title">厂家旗舰版</h3>
+                        <p class="p-year-user"><span class="p-year">3</span>年x <span class="p-user-num">5</span>用户</p>
+
+                        <p class="p-price">特价¥<span class="big-money">12000</span>元</p>
+                        <span class="old-price">原价 <span class="old-price-num">48000</span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="wx-pay-card">
+                    <div class="wx-pay-card-row">
+                        <h4>服务年限</h4>
+
+                        <div class="tag-group">
+                            <span class="tag-cell">1年</span>
+                            <span class="tag-cell tag-cell-active">2年</span>
+                            <span class="tag-cell">3年</span>
+                            <span class="tag-cell">4年</span>
+                        </div>
+
+                    </div>
+                    <div class="wx-pay-card-row">
+                        <h4>用户数量</h4>
+
+                        <div class="tag-group">
+                            <span class="tag-cell">1用户</span>
+                            <span class="tag-cell">2用户</span>
+                            <span class="tag-cell">3用户</span>
+                            <span class="tag-cell">4用户</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-cell tag-cell-active">5用户</span>
+                            <span class="tag-cell">6用户</span>
+                            <span class="tag-cell">7用户</span>
+                            <span class="tag-cell">8用户</span>
+                        </div>
+                    </div>
+
+                    <div class="wx-card-row" style="padding:1rem;">
+                        <button class="pay-btn"><i class="iconfont">&#xe62b;</i> 微信支付</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+
+<script>
+
+
+
+
+
+    mui.init();
+
+
+
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+
+    });
+</script>
+</body>
+
+</html>

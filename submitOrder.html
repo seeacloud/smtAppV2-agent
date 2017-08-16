@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>提交订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+	</head>
+
+
+	<body>
+	<header class="mui-bar mui-bar-nav blank-header">
+	    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+	    <h1 class="mui-title">填写订货单</h1>
+	</header>
+	<div class="mui-content">
+
+		<div class="mui-scroll-wrapper" id="submit-order-scroll" style="top: 44px;padding-bottom:100px;background:#f0f0f0;">
+			<div class="mui-scroll" >
+				<div class="address-card">
+					<div class="post-frame"></div>
+
+					<div class="address-card-inner" id="addr-btn">
+						<div class="addr-icon"><i class="iconfont">&#xe715;</i></div>
+						<div class="addr-info">
+							<p class="addr-name-phone">收货人: 戴树文 <span class="a-phone">186-8888-9999</span></p>
+							<p class="addr-detail"> 地址: 湖南省长沙市岳麓区高新路高新科技大厦1栋101</p>
+						</div>
+					</div>
+					<div class=" post-frame"></div>
+
+				</div>
+
+		<div class="goods-card">
+			<div class="goods-title">
+				汉瑞木业有限公司
+			</div>
+
+			<div class="goods-info-group">
+				<div class="goods-info">
+					<div class="img-wrap"><img src="img/t-1.jpg" alt=""></div>
+					<div class="goods-detail">
+						<p>汉瑞木业 | 全进口实木扶梯定制 多种颜色材质可选 经久耐用 美观大方 尽显您的尊贵</p>
+						<p class="color-gray">
+							颜色分类: 棕色+黄花梨
+						</p>
+					</div>
+					<div class="goods-price">
+						<p class="money">￥8288.00</p>
+						<p>x4</p>
+					</div>
+				</div>
+				<div class="goods-info">
+					<div class="img-wrap"><img src="img/t-5.jpg" alt=""></div>
+					<div class="goods-detail">
+						<p>汉瑞木业 | 全进口实木扶梯定制 多种颜色材质可选 经久耐用 美观大方 尽显您的尊贵</p>
+						<p class="color-gray">
+							颜色分类: 棕色+黄花梨
+						</p>
+						<span class="tag">厂家促销</span>
+					</div>
+					<div class="goods-price">
+						<p class="money">￥8288.00</p>
+						<p>x4</p>
+					</div>
+				</div>
+				<div class="goods-info">
+					<div class="img-wrap"><img src="img/c-2.jpg" alt=""></div>
+					<div class="goods-detail">
+						<p>汉瑞木业 | 全进口实木扶梯定制 多种颜色材质可选 经久耐用 美观大方 尽显您的尊贵</p>
+						<p class="color-gray">
+							颜色分类: 棕色+黄花梨
+						</p>
+					</div>
+					<div class="goods-price">
+						<p class="money">￥8288.00</p>
+						<p>x4</p>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="goods-div-2 goods-div-2-first">
+				<div>配送方式</div>
+				<div>快递</div>
+			</div>
+
+			<div class="goods-div-2">
+				<div>给卖家留言</div>
+				<div><input type="text" placeholder="选填,可填写你的定制需求"></div>
+			</div>
+
+
+		</div>
+
+
+			</div>
+		</div>
+
+		<!--<div class="cart-fixed-bar">-->
+
+			<!--<div class="goods-info">-->
+				<!--<span >共 5 件商品</span>-->
+				<!--合计: <span><span class="rmb">￥</span><span class="money">29888.00</span></span>-->
+			<!--</div>-->
+
+			<!--<button class="mui-btn mui-btn-danger" id="submit-order-btn">提交订单</button>-->
+		<!--</div>-->
+		<div class="cart-fixed-bar" id="cart-fixed-bar">
+
+
+
+			<div class="total-money-div">共5件商品 合计: ￥<span class="total-money">6888.00</span></div>
+
+			<div class="btn-div ">
+				<div class="smt-btn-red" id="submit-order-btn">提交订货单</div>
+			</div>
+
+		</div>
+
+	</div>
+
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init();
+			mui.ready(function () {
+
+				var addrBtn=document.querySelector('#addr-btn');
+				addrBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'addrList.html'
+					});
+				});
+
+				mui('#submit-order-scroll').scroll();
+				var btn=document.querySelector('#addr-list-btn');
+
+				var submitBtn=document.querySelector('#submit-order-btn');
+				submitBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'orderSuccess.html',
+						id:'orderSuccess'
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订货管理</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		
+	</head>
+
+	<body>
+		
+		<div class="mui-content" style="padding-top:40px;">
+			
+			<div class="s-tabs tabs-sell">
+				<div class="s-tabs-item item-active">全部</div>
+				<div class="s-tabs-item">已下单</div>
+				<div class="s-tabs-item">已接单</div>
+				<div class="s-tabs-item">执行中</div>
+				<div class="s-tabs-item">已完成</div>
+			</div>
+			
+			<div class="mui-scroll-wrapper" id="order-scroll" style="top:40px;background: #f0f0f0;">
+			    <div class="mui-scroll">
+			        <!--这里放置真实显示的DOM内容-->
+				<div class="goods-card" >
+				<div class="goods-title">
+					<div>厂家: 汉瑞木业有限公司</div> <div class="sell-status "> [ 执行中 ]</div>
+				</div>
+					<div class="goods-info-group">
+						<div class="goods-info">
+							<div class="img-wrap"><img src="img/c-4.jpg" alt=""></div>
+							<div class="goods-detail">
+								<p class="p-name">汉瑞木业 | 全进口实木扶梯定制 多种颜色材显您的尊贵</p>
+								<p class="goods-attr">
+									颜色分类: 棕色+黄花梨
+								</p>
+							</div>
+							<div class="goods-price">
+								<p class="money"><span class="rmb">￥</span>8288.00</p>
+								<p>x4</p>
+                                <div class="s-btn-mini confirm-settle" id="confirm-settle-1">确认结算</div>
+
+                            </div>
+						</div>
+					</div>
+
+
+				<div class=" flex-right" >
+					<span>共 1 件 </span>  合计: <span class="total-money"><span class="rmb">￥</span>9757.00</span>
+				</div>
+
+				<div class="flex-right">
+					<button class="mui-btn " id="detail-btn">详情</button>
+					<button class="mui-btn " id="pay-btn">付款</button>
+					<button class="mui-btn  btn-active" id="btn-confirm-1">确认收货</button>
+				</div>
+			</div>
+
+			<div class="goods-card" >
+				<div class="goods-title">
+					<div>厂家: 戴氏木业</div> <div class="sell-status "> [ 已下单 ]</div>
+				</div>
+
+				<div class="goods-info-group">
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/d-4.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name" >戴氏木业 | 全进口实木扶梯定制 多种颜用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+						</div>
+						<div class="goods-price">
+							<p class="money"><span class="rmb">￥</span>8288.00</p>
+							<p>x4</p>
+                            <div class="s-btn-mini confirm-settle">确认结算</div>
+						</div>
+					</div>
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/t-3.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name" >戴氏木业 | 全进口实木扶梯定制材质可选 经久耐用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+							<span class="tag">厂家促销</span>
+						</div>
+						<div class="goods-price">
+							<p class="money"><span class="rmb">￥</span>8288.00</p>
+							<p>x4</p>
+                            <div class="s-btn-mini confirm-settle">确认结算</div>
+
+                        </div>
+					</div>
+					<div class="goods-info">
+						<div class="img-wrap"><img src="img/s-5.jpg" alt=""></div>
+						<div class="goods-detail">
+							<p class="p-name" >戴氏木业 | 全进口实木扶梯定制 多种颜色材质久耐用 美观大方 尽显您的尊贵</p>
+							<p class="goods-attr">
+								颜色分类: 棕色+黄花梨
+							</p>
+						</div>
+						<div class="goods-price">
+							<p class="money"><span class="rmb">￥</span>8288.00</p>
+							<p>x4</p>
+                            <div class="s-btn-mini confirm-settle">确认结算</div>
+                        </div>
+					</div>
+				</div>
+
+
+
+				<div class=" flex-right" >
+				<span>共 5 件 </span>  合计: <span class="total-money"><span class="rmb">￥</span>29777.00</span>
+				</div>
+
+				<div class="flex-right">
+					<button class="mui-btn ">详情</button>
+					<button class="mui-btn ">确认收货</button>
+					<button class="mui-btn btn-active">付款</button>
+				</div>
+			</div>
+
+			<div class="the-end"> - End -</div>
+			    </div>
+			</div>
+			
+			
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		mui.ready(function () {
+
+		    var confirmSettle1=document.querySelector('#confirm-settle-1');
+            confirmSettle1.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'confirmSettle.html'
+                });
+            });
+
+			var detailBtn=document.querySelector('#detail-btn');
+			var payBtn=document.querySelector('#pay-btn');
+			detailBtn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'orderDetail.html'
+				});
+			});
+
+			payBtn.addEventListener('tap',function () {
+				mui.openWindow({
+					url:'payMoney.html'
+				});
+			});
+
+
+			mui('#order-scroll').scroll();
+			var btn=document.querySelector('#btn-confirm-1');
+			btn.addEventListener('tap',function () {
+				mui.confirm('确认收到订单4252435234的货物?','确认收货',['确认','取消'])
+
+			});
+
+			mui('.goods-card').on('tap','.goods-detail',function () {
+				mui.openWindow({
+					url:'productDetail.html',
+					id:'productDetail'
+				});
+
+			});
+		});
+
+		window.onload=function () {
+			var activeBtns=document.querySelector('.btn-active');
+			for(var i=0;i<activeBtns.length;i++)
+			{
+
+			}
+
+		}
+	</script>
+	<script src="js/jquery1.12.1.min.js"></script>
+	<script src="js/smt-app.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

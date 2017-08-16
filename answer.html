@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查看答案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+<div id="app">
+
+<header class="mui-bar mui-bar-nav blank-header">
+    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+    <h1 class="mui-title">查看答案</h1>
+
+
+    <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+
+</header>
+
+
+
+<div class="mui-content" id="clientlist">
+    <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+        <div class="mui-scroll">
+            <div class="answer-inner">
+                <div class="question">
+                    <span class="title">Q: </span>山木通的定价标准怎么计算？
+                </div>
+                <div class="answer">
+                    <p>
+                        <span class="title">A: </span>
+                        山木通.云管理平台是提供给家具、家居、建材、木业加工生产销售企业及门店的云管理平台，是基于移动互联网时代的在线订单跟踪处理及企业内部流程管理于一体的企业SaaS服务平台，致力于帮助企业快速构建自己专属的在线销售、库存、订货、生产、物流、资金监控平台，帮助客户开拓销售渠道，解决代理商和厂家之间的沟通困难、高效进行订单跟踪处理，加速资金回笼和风险管理，让管理更轻松。
+
+                    </p>
+                    <p>                山木通运用国际先进的互联网、云计算、大数据等技术，结合高品质的客户服务，已为多家企业提供了企业运营与管理完整的互联网解决方案。
+                    </p>
+                    <p>                山木通适用于楼梯扶手、木门、整体家居、地板、家具、家居饰品、橱柜、门窗、瓷砖、卫浴、吊顶、板材、茶台、工艺品、烟花、花炮、纸筒等生产企业。
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+</div>
+</div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+
+
+
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+    new Vue({
+        el:'#app',
+        data:{
+            seen2:false,
+            seen3:false,
+            seenedit:false,
+            seendone:false,
+            currentTab:1,
+            content1:true,
+            content2:false,
+            content3:false,
+            clientsA:[
+                {img:'img/icon2.jpg',name:'天行者', phone:'186-8888-8888',info:'天行者关注了您的店铺，请您尽快跟进',date:'今天 8:28'},
+                {img:'img/icon3.jpg',name:'悟空', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'昨天 14:56'},
+                {img:'img/icon4.jpg',name:'轻舞飞扬', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'2017-05-11 8:28'},
+                {img:'img/icon.jpg',name:'我是加菲猫', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'2017-04-22 8:28'},
+                {img:'img/icon6.jpg',name:'太阳照常升起', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'2017-03-11 8:28'},
+                {img:'img/icon.jpg',name:'少侠', phone:'186-8888-8888',info:'你家的沙发怎么卖？包送货不吗？我看中了你们店里一款真皮的沙发，有没有什么优惠？',date:'2017-02-08 8:28'}
+
+            ],
+            clientsB:[
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'沙发8888元一套，送茶几',date:'已报价'},
+                {img:'img/icon4.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  店里正在搞活动，欢迎挑选，包您满意',date:'已报价'},
+                {img:'img/icon4.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'年中促销，欢迎选购',date:'客户议价'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:'已报价'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园000号 翡翠花园2-908',date:'已报价'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:'已报价'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:'已报价'},
+                {img:'img/icon3.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓000号 翡翠花园大道1000号 翡翠花园2-908',date:'已报价'},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:'客户议价'},
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'  岳麓区 岳麓大道1000号 翡翠花园2-908',date:'已报价'}
+
+            ],
+            clientsC:[
+                {img:'img/icon.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon2.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon6.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''},
+                {img:'img/icon5.jpg',name:'花园小区李哥', phone:'186-8888-8888',info:'岳麓区 岳麓大道1000号 翡翠花园2-908',date:''}
+
+            ]
+        },
+        methods:{
+            tab1down:function () {
+                this.content1=true;
+                this.content2=false;
+                this.content3=false;
+                this.seenedit=false;
+                this.seendonw=false;
+                this.currentTab=1;
+                this.seen1=false;
+                this.seen2=false;
+                this.seenedit=false;
+                this.seendone=false;
+            },
+            tab2down:function () {
+                this.content1=false;
+                this.content2=true;
+                this.content3=false;
+                this.seenedit=true;
+                this.seendone=false;
+                this.currentTab=2;
+                this.seen3=false;
+                this.seen2=false;
+
+            },
+            tab3down:function () {
+                this.content1=false;
+                this.content2=false;
+                this.content3=true;
+                this.seenedit=true;
+                this.seendone=false;
+                this.currentTab=3;
+                this.seen2=false;
+                this.seen3=false;
+            },
+            editdown:function () {
+                if(this.currentTab===2)
+                {
+                    this.seen2=true;
+                    this.seen3=false;
+                    this.seenedit=false;
+                    this.seendone=true;
+                }else if(this.currentTab===3)
+                {
+                    this.seen2=false;
+                    this.seen3=true;
+                    this.seenedit=false;
+                    this.seendone=true;
+                }
+            },
+            donedown:function () {
+                if(this.currentTab===2)
+                {
+                    this.seen2=false;
+                    this.seen3=false;
+                    this.seenedit=true;
+                    this.seendone=false;
+                }else if(this.currentTab===3)
+                {
+                    this.seen2=false;
+                    this.seen3=false;
+                    this.seenedit=true;
+                    this.seendone=false;
+                }
+            }
+        }
+    });
+
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>产品推广</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/promotion.css"/>
+</head>
+<body>
+
+
+    <div id="app">
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">产品推广</h1>
+            <!--<span v-on:click="editdown" v-if="seenedit" class="edit-btn" id="edit-btn">编辑</span>-->
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+        </header>
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#fff;">
+                <div class="mui-scroll">
+                    <div class="promotion-card" style="background:#a44bf6;">
+                        <div class="icon">
+                            <i class="iconfont" style="color:#fff;">&#xe62d;</i>
+                            <h5>我的门店</h5>
+                        </div>
+
+                        <div class="intro">
+                            <p>我的门店；随时分享门店和产品，增加线上营销推广能力
+                                门店预览和分享功能；</p>
+                        </div>
+                    </div>
+                    <div class="promotion-card" style="background:#f64b98;">
+                        <div class="icon">
+                            <i class="iconfont" >&#xe704;</i>
+                            <h5>VR实景</h5>
+                        </div>
+
+                        <div class="intro">
+                            <p>VR实景；拍摄客户现场或样板间实景图像，结合VR虚拟现实技术，让客户直观逼真体验产品的魅力。</p>
+                        </div>
+                    </div>
+                    <div class="promotion-card" style="background:#40dfbb;">
+                        <div class="icon">
+                            <i class="iconfont" >&#xe64c;</i>
+                            <h5>项目案例</h5>
+                        </div>
+
+                        <div class="intro">
+                            <p>项目案例；图文并茂的展示门店产品在项目案例中的应用，让客户真实感受产品的美；</p>
+                        </div>
+                    </div>
+                    <div class="promotion-card" style="background:#24b0fd;">
+                        <div class="icon">
+                            <i class="iconfont" >&#xe632;</i>
+                            <h5>热门软文</h5>
+                        </div>
+
+                        <div class="intro">
+                            <p>热门软文：深度融合热门文章，快速打造属于自己的宣传广告，不经意间进行产品的宣传</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+
+        var winH=$(window).height();
+        var cardH=(winH-44)/4;
+
+        $('.promotion-card').css('height',cardH+'px');
+    });
+
+
+
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

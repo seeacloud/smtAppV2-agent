@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>产品</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/smt.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script src="js/jquery1.12.1.min.js"></script>
+
+</head>
+
+
+	<body>
+
+	<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+		<div class="p-attr">
+			<div class="sec sec-1">
+
+				<div class="img-wrap round-corner" id="img-wrap">
+					<div><img src="img/t-3.jpg" alt=""></div>
+				</div>
+				<div>
+					<p class=""><span class="total-money"><span class="rmb">￥</span><span
+							class="money-big">9982.00</span></span></p>
+					<p>请选择:颜色 材质</p>
+				</div>
+				<a href="#sheet1"><i class="iconfont">&#xe69a;</i></a>
+			</div>
+
+			<div class="sec sec-color-and-more">
+				<div class="sec-body attrs">
+					<h4 class="sec-label">颜色</h4>
+					<ul>
+						<li>
+							<div class="p-tag">棕色</div>
+						</li>
+						<li>
+							<div class="p-tag p-tag-active">白色</div>
+						</li>
+						<li>
+							<div class="p-tag">原木色</div>
+						</li>
+					</ul>
+				</div>
+				<div class="sec-body attrs">
+					<h4 class="sec-label">材质</h4>
+					<ul>
+						<li>
+							<div class="p-tag p-tag-active">橡木</div>
+						</li>
+						<li>
+							<div class="p-tag">黄花梨</div>
+						</li>
+						<li>
+							<div class="p-tag">水曲柳</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="sec sec-num">
+				<div class="sec-body">
+					<h4 class="sec-label">数量</h4>
+					<div class="p-amount">
+						<i class="iconfont">&#xe635;</i><input type="text" value="1"><i class="iconfont">&#xe634;</i>
+					</div>
+				</div>
+			</div>
+
+			<div class="sec sec-btn">
+				<a href="#sheet1">确 定</a>
+			</div>
+
+		</div>
+
+	</div>
+		
+		<!-- 主界面移动、菜单不动 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+		  <!-- 菜单容器 -->
+		  <aside class="mui-off-canvas-right" id="offCanvasSide">
+			  <div class="off-left">
+				  <ul>
+					  <li>全部</li>
+					  <li>家装主材</li>
+					  <li class="li-active">家庭家具</li>
+					  <li>办公家具</li>
+					  <li>竹材类</li>
+					  <li>地板类</li>
+					  <li>家居软装</li>
+					  <li>其他</li>
+				  </ul>
+			  </div>
+
+                  <div class="btn-2-fixed-btm" style="width:90%; height:40px;">
+                      <div class="btn-cancel mui-action-back" style="font-size:.8rem;" id="cancel-category">
+                          取消</div>
+                      <div class="btn-confirm" style="font-size:.8rem;">确认</div>
+                  </div>
+
+
+
+		    <div class="mui-scroll-wrapper" style="top:0; background:#fff;">
+		      <div class="mui-scroll">
+
+				  <div class="off-right">
+					  <div class="cate-row">
+						  <div class="cate-item">
+							  <img src="img/t-4.jpg" alt="">
+							  桌子
+						  </div>
+						  <div class="cate-item">
+							  <img src="img/c-4.jpg" alt="">
+							  椅子
+						  </div>
+						  <div class="cate-item">
+							  <img src="img/yigui-1.jpg" alt="">
+							  衣柜
+						  </div>
+					  </div>
+					  <div class="cate-row">
+						  <div class="cate-item">
+							  <img src="img/sofa-1.jpg" alt="">
+							  沙发
+						  </div>
+						  <div class="cate-item">
+							  <img src="img/xiegui-1.jpg" alt="">
+							  鞋柜
+						  </div>
+						  <div class="cate-item">
+							  <img src="img/dianshigui-1.jpg" alt="">
+							  电视柜
+						  </div>
+					  </div>
+					  <div class="cate-row">
+						  <div class="cate-item">
+							  <img src="img/dengzi.jpg" alt="">
+							  凳子
+						  </div>
+						  <div class="cate-item">
+
+						  </div>
+						  <div class="cate-item">
+
+						  </div>
+					  </div>
+				  </div>
+
+		        <!-- 菜单具体展示内容 -->
+		        	
+		      </div>
+		    </div>
+		  </aside>
+		  <!-- 主页面容器 -->
+		  <div class="mui-inner-wrap">
+		    <!-- 主页面标题 -->
+
+			  <div class="s-tabs">
+				  <div class="s-tabs-item item-active">全部</div>
+				  <div class="s-tabs-item">家装主材</div>
+				  <div class="s-tabs-item ">家庭家具</div>
+				  <div class="s-tabs-item" id="offCanvasShow">
+					  <a href="#offCanvasSide">更多&middot;&middot;&middot;</a>
+				  </div>
+			  </div>
+
+<!--下拉加载开始-->
+			  <div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="margin-bottom:0;top:42px;">
+				  <div class="mui-scroll">
+					  <!--数据列表-->
+					  <ul class="mui-table-view mui-table-view-chevron p-list">
+
+					  </ul>
+				  </div>
+			  </div>
+		    <div class="mui-off-canvas-backdrop"></div>
+		  </div> 
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.ready(function () {
+				mui('.mui-scroll-wrapper').scroll();
+			});
+		</script>
+		<script src="js/smt-app.js"></script>
+		<script>
+			mui.ready(function () {
+
+				var cancelBtn=document.querySelector('#cancel-category');
+				cancelBtn.addEventListener('tap',function () {
+					mui('.mui-off-canvas-wrap').offCanvas().close();
+
+				});
+				mui('.p-list').on('tap','.p-name',function () {
+					mui.openWindow({
+						url:'productDetail.html'
+					});
+				});
+
+
+			});
+		</script>
+
+	<script>
+		mui.init({
+			pullRefresh: {
+				container: '#pullrefresh',
+				down: {
+//					callback: pulldownRefresh
+				},
+				up: {
+					contentrefresh: '正在加载...',
+					callback: pullupRefresh
+				}
+			}
+		});
+		/**
+		 * 下拉刷新具体业务实现
+		 */
+		function pulldownRefresh() {
+			setTimeout(function() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for (var i = cells.length, len = i + 3; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+				mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+				//refresh completed
+			}, 1500);
+		}
+		var count = 0;
+		/**
+		 * 上拉加载具体业务实现
+		 */
+		function pullupRefresh() {
+			setTimeout(function() {
+				mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for (var i = cells.length, len = i + 20; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell'+' '+'mui-media';
+//                li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					li.innerHTML=' <a href="javascript:;" class="p-card" id="p-btn1">' +
+							'<div class="mui-media-object mui-pull-left p-img-wrap">' +
+							'<img class="p-img" src="img/t-4.jpg"  alt=""></div>' +
+							'<div class="mui-media-body">' +
+							'<p class="p-name">汉瑞木业 | 实木扶梯 多材质多颜色可选 满足您的各种需求, 尽显满' +
+							'足您的各种需求, 尽显满足您的各种需求, 尽显尊贵奢华</p>' +
+							'<p class="p-code">产品编号: FT1101-11</p>' +
+							'<h4 class="price ">￥<span class="money">8824.00</span></h4></div></a>' +
+							'<a href="#sheet1" class="add-to-cart"><i class="iconfont">&#xe698\;</i></a>';
+					table.appendChild(li);
+				}
+			}, 1500);
+		}
+		if (mui.os.plus) {
+			mui.plusReady(function() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();
+				}, 1000);
+
+			});
+		} else {
+			mui.ready(function() {
+				mui('#pullrefresh').pullRefresh().pullupLoading();
+			});
+		}
+	</script>
+	</body>
+
+</html>

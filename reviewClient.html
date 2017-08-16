@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查看客户</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobil-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/smt.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/clients.css"/>
+</head>
+<body>
+
+<div class="fix-bar-review">
+    <div class="btn">报价</div>
+    <div class="btn">成交</div>
+    <div class="btn last-no-divide btn-red">跟进</div>
+</div>
+    <div id="app">
+
+        <header class="mui-bar mui-bar-nav blank-header">
+            <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+            <h1 class="mui-title">查看客户</h1>
+            <span v-on:click="togglepopmenu"  class="edit-btn" id="edit-btn">&middot;&middot;&middot;</span>
+            <!--<span v-on:click="donedown" v-if="seendone" class="edit-btn" id="done-btn">完成</span>-->
+            <!--<i class="iconfont" id="add-btn"  style="line-height: 44px;float:right;font-size: 1.2rem;">&#xe877;</i>-->
+
+            <div v-if="popmenu" class="pop-up-menu">
+                <div class="menu-inner">
+                    <div class="pm-item">
+                        <i class="iconfont">&#xe633;</i> 编辑
+                    </div>
+                    <div class="pm-item last-no-divide">
+                        <i class="iconfont">&#xe69d;</i> 删除
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="mui-content" id="clientlist">
+            <div class="mui-scroll-wrapper" style="top:44px;background:#eee;">
+                <div class="mui-scroll">
+
+                    <div class="client-card">
+                        <div class="icon"><img src="img/icon1.jpg" alt=""/></div>
+                        <div class="info">
+                            <div class="d-left">
+                                <div class="info-name">李先生 </div>
+                                <span class="phone">186-9999-9999</span>
+                            </div>
+                            <div class="d-right">
+                                <span class="status">
+                                    客户登记
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">来源</div>
+                        <div class="info-content">来源 1</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-title">备注</div>
+                        <div class="info-content">有购买意向，但嫌价格太高</div>
+                    </div>
+                    <div class="info-item last-no-divide">
+                        <div class="info-title">地址</div>
+                        <div class="info-content">长沙市雨花区 鼎天国际 2-188</div>
+                    </div>
+                    <div class="sec-diviver">
+                        跟进过程
+                    </div>
+
+                    <div class="info-item step-group">
+                        <div class="step step-first step-active">
+                            <div class="ball"></div>
+                            <p>客户登记</p>
+                        </div>
+                        <div class="step step-active">
+                            <div class="ball"></div>
+                            <p>跟进信息</p>
+                        </div>
+                        <div class="step">
+                            <div class="ball"></div>
+                            <p>客户报价</p>
+                        </div>
+                        <div class="step step-last">
+                            <div class="ball"></div>
+                            <p>我店成交</p>
+                        </div>
+                    </div>
+
+
+
+                    <div v-for="record in records" class="record-item">
+                        <div class="icon">
+                            <img :src="record.img" alt=""/>
+                        </div>
+                        <div class="record-info">
+                           <div class="row-name">
+                               <span class="name">{{record.name}}</span>
+                               <span class="date">{{record.date}}</span>
+                           </div>
+                            <p class="msg">{{record.msg}}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+<script src="js/jquery1.12.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/smt-app.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    mui.init();
+    mui.ready(function () {
+        mui('.mui-scroll-wrapper').scroll();
+        mui('.message-item').each(function () {
+            this.addEventListener('tap',function () {
+                mui.openWindow({
+                    url:'msgList.html'
+                });
+            });
+        });
+    });
+
+    new Vue({
+        el:'#app',
+        data:{
+            popmenu:true,
+            records:[
+                {img:'img/icon4.jpg',name:'王乐乐',msg:'李总，你看中的沙发，我给你申请了特价，价格非常优惠，您今天来店里看一下，保证你满意',date:'今天 10:28'},
+                {img:'img/icon4.jpg',name:'王乐乐',msg:'报价：沙发整套12888元，送茶几一张',date:'今天 10:28'},
+                {img:'img/icon4.jpg',name:'王乐乐',msg:'电话跟进，沟通购买意向',date:'昨天 10:28'},
+                {img:'img/icon3.jpg',name:'刘洋',msg:'客户登记：李先生关注了店铺，加为意向客户',date:'2017-06-11 10:28'}
+            ]
+        },
+        methods:{
+            togglepopmenu:function () {
+                this.popmenu=!this.popmenu;
+            }
+        }
+    })
+</script>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

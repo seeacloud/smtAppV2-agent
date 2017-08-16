@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>me</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">-->
+		    <!--<a class="mui-action-back mui-icon mui-pull-left"> <i class="iconfont">&#xe697;</i></a>-->
+		    <!--<h1 class="mui-title">我的山木通</h1>-->
+		<!--</header>-->
+
+		<div class="s-header-wrap">
+				<div class="s-header">
+				<div class="i-wrap"><i class="iconfont mui-action-back">&#xe697;</i></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div class="mui-content">
+			
+		    <div class="mui-scroll-wrapper" style="background:#f0f0f0;top:0;">
+		        <div class="mui-scroll">
+
+					<div class="user-panel">
+						<div class="user-icon"><i class="iconfont">&#xe694;</i></div>
+						<div class="user-name">戴树文</div>
+						<div class="user-level">一级代理</div>
+					</div>
+
+					<div class="smt-sec">
+					<div class="sec-title">
+
+						<div>销售单</div>
+						<div>全部销售单 <i class="iconfont">&#xe6a7;</i></div>
+
+					</div>
+
+					<div class="sec-row-flex">
+						<div id="get-money">
+							<p><i class="iconfont">&#xe631;</i></p>
+							<p>待收款</p>
+						</div>
+						<div id="deliver">
+							<p><i class="iconfont">&#xe608;</i></p>
+							<p>待送货</p>
+						</div>
+						<div id="return-goods">
+							<p><i class="iconfont">&#xe6d7;</i></p>
+							<p>退货</p>
+						</div>
+					</div>
+				</div>
+
+
+
+					<div class="smt-sec">
+						<div class="sec-title">
+
+							<div>我的订单</div>
+							<div>全部订单 <i class="iconfont">&#xe6a7;</i></div>
+
+						</div>
+
+						<div class="sec-row-flex">
+							<div>
+								<p><i class="iconfont">&#xe84a;</i></p>
+								<p>待付款</p>
+							</div>
+							<div>
+								<p><i class="iconfont">&#xe60e;</i></p>
+								<p>待收货</p>
+							</div>
+							<div>
+								<p><i class="iconfont">&#xe6d7;</i></p>
+								<p>退换/返修</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="smt-sec">
+						<div class="sec-title">
+
+							<div>我的资金</div>
+							<div> <i class="iconfont">&#xe6a7;</i></div>
+
+						</div>
+
+						<div class="sec-row-flex">
+							<div>
+								<p class="money"><span class="rmb">￥</span>999.00	</p>
+								<p>预付款账户</p>
+							</div>
+							<div></div>
+							<div>
+								<p class="money"><span class="rmb">￥</span>999.00	</p>
+								<p>返点账户</p>
+							</div>
+							<!--<div>-->
+								<!--<p><span class="rmb">￥</span>999.00	</p>-->
+								<!--<p>优惠卡</p>-->
+							<!--</div>-->
+						</div>
+					</div>
+
+		        </div>
+		    </div>
+		    
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.ready(function () {
+				var getMoneyBtn=document.querySelector('#get-money');
+				var deliverBtn=document.querySelector('#deliver');
+				var returnGoodsBtn=document.querySelector('#return-goods');
+
+				getMoneyBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'toGetMoney.html'
+					});
+				});
+
+				deliverBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'toDeliver.html'
+					});
+				});
+
+
+				returnGoodsBtn.addEventListener('tap',function () {
+					mui.openWindow({
+						url:'returnGoods.html'
+					});
+				});
+
+
+				mui('.mui-scroll-wrapper').scroll();
+
+			})
+		</script>
+	</body>
+
+</html>

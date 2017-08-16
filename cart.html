@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/smt.css">
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+	</head>
+
+
+	<body>
+
+	<header class="mui-bar mui-bar-nav cart-header">
+	    <a class="mui-action-back mui-icon  mui-pull-left"><i class="iconfont">&#xe697;</i></a>
+	    <h1 class="mui-title">购物车(12)</h1>
+		<span class="mui-pull-right" id="edit-btn">编辑</span>
+		<span class="mui-pull-right" id="edit-done-btn" style="display:none;">完成</span>
+
+	</header>
+	<div class="mui-content" >
+
+		<!--<div class="mui-popover mui-popover-bottom mui-popover-action" id="pop1">-->
+			<!--asdfasdf-->
+			<!--<div style="height:500px;background:blue;"></div>-->
+		<!--</div>-->
+
+		<div id="pop1" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<div class="p-attr">
+				<div class="sec sec-1">
+
+					<div class="img-wrap round-corner" id="img-wrap"><div><img src="img/t-4.jpg" alt=""></div></div>
+					<div>
+						<p class=""><span class="total-money"><span class="rmb">￥</span><span class="money-big">9982.00</span></span></p>
+						<p>产品编号: 1212131287</p>
+					</div>
+					<a href="#pop1"><i class="iconfont">&#xe69a;</i></a>
+				</div>
+
+				<div class="sec pop-attr-sec">
+					<h5>颜色</h5>
+					<div class="p-colors">
+						<div class="p-tag">白色</div><div class="p-tag p-tag-active">棕色</div><div class="p-tag">原木色</div>
+					</div>
+
+				</div>
+
+				<div class="sec pop-attr-sec">
+
+					<h5>材质</h5>
+					<div class="p-materials">
+						<div class="p-tag">水曲柳</div><div class="p-tag">橡木</div><div class="p-tag p-tag-active">黄花梨</div>
+					</div>
+				</div>
+
+
+				<div class="sec sec-btn">
+					<a href="#pop1">确 定</a>
+				</div>
+
+			</div>
+			<!--<ul class="mui-table-view">-->
+			<!--<li class="mui-table-view-cell">-->
+			<!--<a href="#sheet1"><b>取消</b></a>-->
+			<!--<div style="background:red;">asdfasd</div>-->
+			<!--</li>-->
+			<!--</ul>-->
+		</div>
+
+		<div class="cart-fixed-bar" id="cart-fixed-bar">
+
+			<div class="checkbox-div">
+				<div class="mui-input-row mui-checkbox mui-left">
+					<label></label>
+					<input name="checkbox1" value="Item 1" type="checkbox">
+				</div>
+				<div style="padding-top:2px;margin-left:2px;">全部</div>
+			</div>
+
+
+			<div class="total-money-div">合计: ￥<span class="total-money">6888.00</span></div>
+
+			<div class="btn-div">
+				<div class="smt-btn-red" id="checkBtn">结算(12)</div>
+				<span class="btn-delete-cart" id="btn-delete">删除(12)</span>
+			</div>
+
+		</div>
+
+		<div class="mui-scroll-wrapper" style="top:43px;background:#f0f0f0;">
+			<div class="mui-scroll">
+
+				<div class="buy-card">
+					<div class="buy-card-title">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label></label>
+							<input name="checkbox1" value="Item 1" type="checkbox" checked>
+						</div>
+						<h5 class="m-name">汉瑞木业有限公司</h5>
+
+					</div>
+					
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox" checked>
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-4.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色定制 多种颜色定制 多种颜色定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs" id="pop-btn-1">
+									<a href="javascript:;" class="pop-btn" >颜色:原木色 材质:黄花梨</a>
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r ">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox" checked>
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-5.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs ">
+									颜色:原木色 材质:黄花梨
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox">
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-6.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs ">
+									颜色:原木色 材质:黄花梨
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="buy-card">
+					<div class="buy-card-title">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label></label>
+							<input name="checkbox1" value="Item 1" type="checkbox">
+						</div>
+						<h5 class="m-name">汉瑞木业有限公司</h5>
+
+					</div>
+
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox">
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-1.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs ">
+									颜色:原木色 材质:黄花梨
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox">
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-2.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs ">
+									颜色:原木色 材质:黄花梨
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buy-sec-baby">
+						<div class="sec-info">
+							<div class="checkbox-wrap">
+								<div class="mui-input-row mui-checkbox mui-left">
+									<label></label>
+									<input name="checkbox1" value="Item 1" type="checkbox">
+								</div>
+							</div>
+
+							<div class="img-wrap">
+								<img src="img/t-3.jpg" alt="">
+							</div>
+
+							<div class="info-wrap">
+								<p class="p-name">汉瑞木业 | 全实木中式风格扶梯定制 多种颜色材质可选 火爆热卖</p>
+								<div class="baby-attrs ">
+									颜色:原木色 材质:黄花梨
+									<div class="arrow-down mui-pull-right">
+										<i class="iconfont">&#xe6a6;</i>
+									</div>
+								</div>
+
+								<div class="row-l-r">
+									<div class="div-l"><span class="rmb">￥</span> <span class="money">8897</span></div>
+									<div class="div-r">
+										<div class="num-adjust-bar">
+											<div class="num-btn"><i class="iconfont">&#xe876;</i></div>
+											<div><input type="text" value="1"></div>
+											<div class="num-btn"><i class="iconfont">&#xe877;</i></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="the-end">- End -</div>
+			</div>
+		</div>
+	</div>
+
+
+		<script src="js/mui.min.js"></script>
+	<script src="js/jquery1.12.1.min.js"></script>
+		<script>
+
+			mui.init();
+
+            mui.ready(function () {
+
+            	var editBtn=document.querySelector('#edit-btn');
+				var $babyAttrs=$('.baby-attrs');
+				editBtn.addEventListener('tap',function () {
+					$babyAttrs.each(function () {
+						$(this).toggleClass('baby-attrs-active');
+						$('#edit-done-btn').show();
+						$('#edit-btn').hide();
+					});
+
+					$('#cart-fixed-bar').toggleClass('cart-fixed-bar-active');
+				});
+
+				var editDoneBtn=document.querySelector('#edit-done-btn');
+				editDoneBtn.addEventListener('tap',function () {
+					$babyAttrs.each(function () {
+						$(this).toggleClass('baby-attrs-active');
+						$('#edit-done-btn').hide();
+						$('#edit-btn').show();
+					});
+					$('#cart-fixed-bar').toggleClass('cart-fixed-bar-active');
+				});
+
+            	var popBtn=document.querySelector('#pop-btn-1');
+				console.log('popbtn:',popBtn);
+				popBtn.addEventListener('tap',function () {
+					if($('#pop-btn-1').hasClass('baby-attrs-active'))
+					{
+						mui('#pop1').popover('show');
+					}
+				});
+
+            	mui('.mui-scroll-wrapper').scroll();
+                var checkBtn=document.querySelector('#checkBtn');
+                checkBtn.addEventListener('tap',function () {
+                    mui.openWindow({
+                        url:'submitSell.html'
+                    });
+                });
+
+				mui('.cart-card').on('tap','.p-info',function () {
+					mui.openWindow({
+						url:'productDetail.html'
+					});
+				});
+            });
+		</script>
+	</body>
+</html>
